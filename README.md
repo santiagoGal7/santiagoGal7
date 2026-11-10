@@ -113,6 +113,20 @@ Hola, soy **Santiago Gallo**. Soy backend developer en Colombia. Trabajo sobre t
   </picture>
 </p>
 
+
+<!--
+  La instancia pública github-readme-activity-graph.vercel.app responde 402
+  (DEPLOYMENT_DISABLED, nov 2026). Uso el fork mantenido
+  https://github-act-graph.rodriaum.com (rodriaum/github-readme-activity-graph).
+-->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-act-graph.rodriaum.com/graph?username=santiagoGal7&bg_color=0D1117&color=C9D1D9&title_color=58A6FF&line=58A6FF&point=58A6FF&area=true&area_color=58A6FF&border_color=30363D&custom_title=Gr%C3%A1fica%20de%20actividad&hide_border=false" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-act-graph.rodriaum.com/graph?username=santiagoGal7&bg_color=F6F8FA&color=24292F&title_color=1C7ED6&line=1C7ED6&point=1C7ED6&area=true&area_color=1C7ED6&border_color=D0D7DE&custom_title=Gr%C3%A1fica%20de%20actividad&hide_border=false" />
+    <img src="https://github-act-graph.rodriaum.com/graph?username=santiagoGal7&bg_color=F6F8FA&color=24292F&title_color=1C7ED6&line=1C7ED6&point=1C7ED6&area=true&area_color=1C7ED6&border_color=D0D7DE&custom_title=Gr%C3%A1fica%20de%20actividad&hide_border=false" alt="Gráfica de actividad de GitHub de Santiago Gallo" width="100%" />
+  </picture>
+</p>
+
 ---
 
 ## Contacto
@@ -134,6 +148,8 @@ Otros repos públicos:
 En el día a día también me apoyo en Cursor y en modelos como ChatGPT, Claude y Gemini.
 
 </details>
+
+
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B132B,100:1C7ED6&height=120&section=footer" width="100%" alt="" />
