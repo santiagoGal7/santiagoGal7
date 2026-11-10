@@ -151,6 +151,15 @@ En el día a día también me apoyo en Cursor y en modelos como ChatGPT, Claude 
 
 
 
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/santiagoGal7/santiagoGal7/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/santiagoGal7/santiagoGal7/output/github-contribution-grid-snake.svg" />
+    <img src="https://raw.githubusercontent.com/santiagoGal7/santiagoGal7/output/github-contribution-grid-snake.svg" alt="Animación de la cuadrícula de contribuciones de GitHub" />
+  </picture>
+</p>
+
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B132B,100:1C7ED6&height=120&section=footer" width="100%" alt="" />
 </p>
