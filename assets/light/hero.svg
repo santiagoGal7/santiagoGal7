@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="312" viewBox="0 0 900 312" role="img" aria-labelledby="t d">
+  <title id="t">Santiago Gallo — Backend Developer en Colombia</title>
+  <desc id="d">Construyo APIs y backends que resuelven problemas reales. Stack: .NET, Python, JavaScript, PostgreSQL y agentes de IA.</desc>
+  <style>
+  text { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
+  .mono { font-family: ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+  .draw { stroke-dasharray: 1; animation: draw 1.1s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes draw { from { stroke-dashoffset: 1; } }
+  .in { animation: in .7s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes in { from { opacity: 0; transform: translateY(6px); } }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; }
+  }
+
+    
+  .blink { animation: blink 1.05s steps(1, end) infinite; }
+  @keyframes blink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
+
+    .req { animation: req 3.6s linear infinite; }
+    @keyframes req {
+      0% { transform: translateY(0); opacity: 0; }
+      6% { opacity: 1; }
+      62% { transform: translateY(156px); opacity: 1; }
+      68%, 100% { transform: translateY(156px); opacity: 0; }
+    }
+  </style>
+  <defs>
+  <pattern id="p-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V6" stroke="#B9B1A0" stroke-width="1"/>
+  </pattern>
+  <pattern id="p-hatch-a" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V5" stroke="#C2410C" stroke-width="1.2"/>
+  </pattern>
+  <pattern id="p-grid" width="12" height="12" patternUnits="userSpaceOnUse">
+    <path d="M12 0 H0 V12" fill="none" stroke="#DDD7CA" stroke-width="0.6"/>
+  </pattern>
+
+  <mask id="hero-tw-m0" maskUnits="userSpaceOnUse">
+    <rect x="22" y="173.5" height="24" width="0" fill="#fff">
+      <animate attributeName="width" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;9;18;27;36;45;54;63;72;81;90;99;108;117;126;135;144;153;162;171;180;189;198;207;216;225;234;225;216;207;198;189;180;171;162;153;144;135;126;117;108;99;90;81;72;63;54;45;36;27;18;9;0" keyTimes="0.00000;0.01100;0.01450;0.01800;0.02150;0.02500;0.02850;0.03200;0.03550;0.03900;0.04250;0.04600;0.04950;0.05300;0.05650;0.06000;0.06350;0.06700;0.07050;0.07400;0.07750;0.08100;0.08450;0.08800;0.09150;0.09500;0.09850;0.18975;0.19100;0.19225;0.19350;0.19475;0.19600;0.19725;0.19850;0.19975;0.20100;0.20225;0.20350;0.20475;0.20600;0.20725;0.20850;0.20975;0.21100;0.21225;0.21350;0.21475;0.21600;0.21725;0.21850;0.21975;0.22100"/>
+    </rect>
+  </mask>
+  <mask id="hero-tw-m1" maskUnits="userSpaceOnUse">
+    <rect x="22" y="173.5" height="24" width="0" fill="#fff">
+      <animate attributeName="width" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;9;18;27;36;45;54;63;72;81;90;99;108;117;126;135;144;153;162;171;180;189;198;207;216;225;234;243;252;261;270;261;252;243;234;225;216;207;198;189;180;171;162;153;144;135;126;117;108;99;90;81;72;63;54;45;36;27;18;9;0" keyTimes="0.00000;0.26100;0.26450;0.26800;0.27150;0.27500;0.27850;0.28200;0.28550;0.28900;0.29250;0.29600;0.29950;0.30300;0.30650;0.31000;0.31350;0.31700;0.32050;0.32400;0.32750;0.33100;0.33450;0.33800;0.34150;0.34500;0.34850;0.35200;0.35550;0.35900;0.36250;0.45375;0.45500;0.45625;0.45750;0.45875;0.46000;0.46125;0.46250;0.46375;0.46500;0.46625;0.46750;0.46875;0.47000;0.47125;0.47250;0.47375;0.47500;0.47625;0.47750;0.47875;0.48000;0.48125;0.48250;0.48375;0.48500;0.48625;0.48750;0.48875;0.49000"/>
+    </rect>
+  </mask>
+  <mask id="hero-tw-m2" maskUnits="userSpaceOnUse">
+    <rect x="22" y="173.5" height="24" width="0" fill="#fff">
+      <animate attributeName="width" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;9;18;27;36;45;54;63;72;81;90;99;108;117;126;135;144;153;162;171;180;189;198;207;216;225;234;243;252;261;270;279;288;297;288;279;270;261;252;243;234;225;216;207;198;189;180;171;162;153;144;135;126;117;108;99;90;81;72;63;54;45;36;27;18;9;0" keyTimes="0.00000;0.51100;0.51450;0.51800;0.52150;0.52500;0.52850;0.53200;0.53550;0.53900;0.54250;0.54600;0.54950;0.55300;0.55650;0.56000;0.56350;0.56700;0.57050;0.57400;0.57750;0.58100;0.58450;0.58800;0.59150;0.59500;0.59850;0.60200;0.60550;0.60900;0.61250;0.61600;0.61950;0.62300;0.71425;0.71550;0.71675;0.71800;0.71925;0.72050;0.72175;0.72300;0.72425;0.72550;0.72675;0.72800;0.72925;0.73050;0.73175;0.73300;0.73425;0.73550;0.73675;0.73800;0.73925;0.74050;0.74175;0.74300;0.74425;0.74550;0.74675;0.74800;0.74925;0.75050;0.75175;0.75300;0.75425"/>
+    </rect>
+  </mask>
+  <mask id="hero-tw-m3" maskUnits="userSpaceOnUse">
+    <rect x="22" y="173.5" height="24" width="0" fill="#fff">
+      <animate attributeName="width" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;9;18;27;36;45;54;63;72;81;90;99;108;117;126;135;144;153;162;171;180;189;198;207;198;189;180;171;162;153;144;135;126;117;108;99;90;81;72;63;54;45;36;27;18;9;0" keyTimes="0.00000;0.76100;0.76450;0.76800;0.77150;0.77500;0.77850;0.78200;0.78550;0.78900;0.79250;0.79600;0.79950;0.80300;0.80650;0.81000;0.81350;0.81700;0.82050;0.82400;0.82750;0.83100;0.83450;0.83800;0.92925;0.93050;0.93175;0.93300;0.93425;0.93550;0.93675;0.93800;0.93925;0.94050;0.94175;0.94300;0.94425;0.94550;0.94675;0.94800;0.94925;0.95050;0.95175;0.95300;0.95425;0.95550;0.95675"/>
+    </rect>
+  </mask></defs>
+
+  <text x="-2" y="88" font-size="56" font-weight="700" letter-spacing="-1.6" fill="#1E1C18" class="in" style="animation-delay:.06s">Santiago Gallo</text>
+  <text x="0" y="126" font-size="18" fill="#5F5A50" class="in" style="animation-delay:.12s">Construyo APIs y backends que resuelven problemas reales.</text>
+
+  <g class="in" style="animation-delay:.18s">
+    <text x="0" y="190" font-size="15" class="mono" fill="#C2410C">$</text>
+    
+  <text x="22" y="190" font-size="15" class="mono" fill="#1E1C18" textLength="234" lengthAdjust="spacingAndGlyphs" mask="url(#hero-tw-m0)">dotnet new webapi -n Nodux</text>
+  <text x="22" y="190" font-size="15" class="mono" fill="#1E1C18" textLength="270" lengthAdjust="spacingAndGlyphs" mask="url(#hero-tw-m1)">python agent.py --model gemini</text>
+  <text x="22" y="190" font-size="15" class="mono" fill="#1E1C18" textLength="297" lengthAdjust="spacingAndGlyphs" mask="url(#hero-tw-m2)">n8n execute --workflow agenda-bot</text>
+  <text x="22" y="190" font-size="15" class="mono" fill="#1E1C18" textLength="207" lengthAdjust="spacingAndGlyphs" mask="url(#hero-tw-m3)">git commit -m &quot;ship it&quot;</text>
+  <rect x="23" y="177.25" width="8.25" height="15.75" fill="#C2410C" class="blink">
+    <animate attributeName="x" dur="20s" repeatCount="indefinite" calcMode="discrete" values="23;32;41;50;59;68;77;86;95;104;113;122;131;140;149;158;167;176;185;194;203;212;221;230;239;248;257;248;239;230;221;212;203;194;185;176;167;158;149;140;131;122;113;104;95;86;77;68;59;50;41;32;23;32;41;50;59;68;77;86;95;104;113;122;131;140;149;158;167;176;185;194;203;212;221;230;239;248;257;266;275;284;293;284;275;266;257;248;239;230;221;212;203;194;185;176;167;158;149;140;131;122;113;104;95;86;77;68;59;50;41;32;23;32;41;50;59;68;77;86;95;104;113;122;131;140;149;158;167;176;185;194;203;212;221;230;239;248;257;266;275;284;293;302;311;320;311;302;293;284;275;266;257;248;239;230;221;212;203;194;185;176;167;158;149;140;131;122;113;104;95;86;77;68;59;50;41;32;23;32;41;50;59;68;77;86;95;104;113;122;131;140;149;158;167;176;185;194;203;212;221;230;221;212;203;194;185;176;167;158;149;140;131;122;113;104;95;86;77;68;59;50;41;32;23" keyTimes="0.00000;0.01100;0.01450;0.01800;0.02150;0.02500;0.02850;0.03200;0.03550;0.03900;0.04250;0.04600;0.04950;0.05300;0.05650;0.06000;0.06350;0.06700;0.07050;0.07400;0.07750;0.08100;0.08450;0.08800;0.09150;0.09500;0.09850;0.18975;0.19100;0.19225;0.19350;0.19475;0.19600;0.19725;0.19850;0.19975;0.20100;0.20225;0.20350;0.20475;0.20600;0.20725;0.20850;0.20975;0.21100;0.21225;0.21350;0.21475;0.21600;0.21725;0.21850;0.21975;0.22100;0.26100;0.26450;0.26800;0.27150;0.27500;0.27850;0.28200;0.28550;0.28900;0.29250;0.29600;0.29950;0.30300;0.30650;0.31000;0.31350;0.31700;0.32050;0.32400;0.32750;0.33100;0.33450;0.33800;0.34150;0.34500;0.34850;0.35200;0.35550;0.35900;0.36250;0.45375;0.45500;0.45625;0.45750;0.45875;0.46000;0.46125;0.46250;0.46375;0.46500;0.46625;0.46750;0.46875;0.47000;0.47125;0.47250;0.47375;0.47500;0.47625;0.47750;0.47875;0.48000;0.48125;0.48250;0.48375;0.48500;0.48625;0.48750;0.48875;0.49000;0.51100;0.51450;0.51800;0.52150;0.52500;0.52850;0.53200;0.53550;0.53900;0.54250;0.54600;0.54950;0.55300;0.55650;0.56000;0.56350;0.56700;0.57050;0.57400;0.57750;0.58100;0.58450;0.58800;0.59150;0.59500;0.59850;0.60200;0.60550;0.60900;0.61250;0.61600;0.61950;0.62300;0.71425;0.71550;0.71675;0.71800;0.71925;0.72050;0.72175;0.72300;0.72425;0.72550;0.72675;0.72800;0.72925;0.73050;0.73175;0.73300;0.73425;0.73550;0.73675;0.73800;0.73925;0.74050;0.74175;0.74300;0.74425;0.74550;0.74675;0.74800;0.74925;0.75050;0.75175;0.75300;0.75425;0.76100;0.76450;0.76800;0.77150;0.77500;0.77850;0.78200;0.78550;0.78900;0.79250;0.79600;0.79950;0.80300;0.80650;0.81000;0.81350;0.81700;0.82050;0.82400;0.82750;0.83100;0.83450;0.83800;0.92925;0.93050;0.93175;0.93300;0.93425;0.93550;0.93675;0.93800;0.93925;0.94050;0.94175;0.94300;0.94425;0.94550;0.94675;0.94800;0.94925;0.95050;0.95175;0.95300;0.95425;0.95550;0.95675"/>
+  </rect>
+    <path d="M0 206.5 H470" stroke="#B9B1A0"/>
+  </g>
+
+  <text x="0" y="240" font-size="14" class="in" fill="#5F5A50" style="animation-delay:.24s">Backend Developer. Trabajo con .NET, C#, Python, PostgreSQL, n8n e IA.</text>
+
+  <!-- Plano: sección de la API -->
+  <path d="M567 36 H577 M572 31 V41" stroke="#B9B1A0"/><path d="M887 36 H897 M892 31 V41" stroke="#B9B1A0"/><path d="M567 242 H577 M572 237 V247" stroke="#B9B1A0"/><path d="M887 242 H897 M892 237 V247" stroke="#B9B1A0"/>
+  <text x="584" y="44" font-size="11.5" fill="#5F5A50">Sección de la API en ASP.NET Core, .NET 10</text>
+  
+  <path d="M584.5 50 V58 M883.5 50 V58" stroke="#B9B1A0"/>
+  <path d="M584 54.5 H884" stroke="#B9B1A0" pathLength="1" class="draw" style="animation-delay:0.2s"/>
+  
+    <g class="in" style="animation-delay:0.25s">
+      <rect x="584.5" y="66.5" width="299" height="33" rx="2" fill="none" stroke="#B9B1A0"/>
+      
+      <text x="604" y="87.5" font-size="11.5" font-weight="600" class="mono" fill="#1E1C18">Presentation</text>
+      <text x="712" y="87.5" font-size="11.5" fill="#5F5A50">Controllers, Swagger</text>
+    </g>
+    <g class="in" style="animation-delay:0.32s">
+      <rect x="584.5" y="108.5" width="299" height="33" rx="2" fill="none" stroke="#B9B1A0"/>
+      
+      <text x="604" y="129.5" font-size="11.5" font-weight="600" class="mono" fill="#1E1C18">Application</text>
+      <text x="712" y="129.5" font-size="11.5" fill="#5F5A50">MediatR, validación</text>
+    </g>
+    <g class="in" style="animation-delay:0.39s">
+      <rect x="584.5" y="150.5" width="299" height="33" rx="2" fill="none" stroke="#1E1C18"/>
+      <rect x="585" y="151" width="9" height="32" fill="url(#p-hatch)"/><path d="M594.5 151 V183" stroke="#1E1C18"/>
+      <text x="604" y="171.5" font-size="11.5" font-weight="600" class="mono" fill="#1E1C18">Domain</text>
+      <text x="712" y="171.5" font-size="11.5" fill="#5F5A50">Entidades, reglas</text>
+    </g>
+    <g class="in" style="animation-delay:0.46s">
+      <rect x="584.5" y="192.5" width="299" height="33" rx="2" fill="none" stroke="#B9B1A0"/>
+      
+      <text x="604" y="213.5" font-size="11.5" font-weight="600" class="mono" fill="#1E1C18">Infrastructure</text>
+      <text x="712" y="213.5" font-size="11.5" fill="#5F5A50">EF Core, PostgreSQL</text>
+    </g>
+  <path d="M858.5 70 V222" stroke="#B9B1A0" stroke-dasharray="2 3"/>
+  <rect x="855" y="68" width="7" height="7" fill="#C2410C" class="req"/>
+  <path d="M0 311.5 H631" stroke="#B9B1A0"/><rect x="631.5" y="272.5" width="268" height="39" fill="none" stroke="#B9B1A0"/><text x="641" y="287" font-size="11" fill="#5F5A50">autor</text><text x="641" y="303" font-size="12.5" font-weight="500" fill="#1E1C18">@santiagoGal7</text><path d="M744.5 272 V312" stroke="#B9B1A0"/><text x="754" y="287" font-size="11" fill="#5F5A50">lugar</text><text x="754" y="303" font-size="12.5" font-weight="500" fill="#1E1C18">Colombia</text><path d="M822.5 272 V312" stroke="#B9B1A0"/><text x="832" y="287" font-size="11" fill="#5F5A50">hoja</text><text x="832" y="303" font-size="12.5" font-weight="500" fill="#1E1C18">00 de 08</text>
+  
+</svg>

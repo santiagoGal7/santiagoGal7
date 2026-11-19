@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="290" height="56" viewBox="0 0 290 56" role="img" aria-labelledby="t d">
+  <title id="t">GitHub: @santiagoGal7</title>
+  <desc id="d">GitHub: @santiagoGal7</desc>
+  <style>
+  text { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
+  .mono { font-family: ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+  .draw { stroke-dasharray: 1; animation: draw 1.1s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes draw { from { stroke-dashoffset: 1; } }
+  .in { animation: in .7s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes in { from { opacity: 0; transform: translateY(6px); } }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; }
+  }
+</style>
+  <defs>
+  <pattern id="p-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V6" stroke="#B9B1A0" stroke-width="1"/>
+  </pattern>
+  <pattern id="p-hatch-a" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V5" stroke="#C2410C" stroke-width="1.2"/>
+  </pattern>
+  <pattern id="p-grid" width="12" height="12" patternUnits="userSpaceOnUse">
+    <path d="M12 0 H0 V12" fill="none" stroke="#DDD7CA" stroke-width="0.6"/>
+  </pattern>
+</defs>
+
+  <rect x="0.5" y="0.5" width="277" height="55" rx="2" fill="none" stroke="#B9B1A0"/>
+  <text x="16" y="22" font-size="12" fill="#5F5A50">GitHub</text>
+  <text x="16" y="41" font-size="15" font-weight="600" fill="#1E1C18">@santiagoGal7</text>
+  <path d="M248 34 L259 23 M251 23 H259 V31" fill="none" stroke="#5F5A50" stroke-width="1" stroke-linecap="square"/>
+  
+</svg>

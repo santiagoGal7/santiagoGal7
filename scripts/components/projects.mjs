@@ -1,77 +1,60 @@
-// Tarjetas de proyectos: una destacada con "requests en vivo" y cuatro compactas.
-import { C, svg, esc, r2, panel, chipRow, wrap, textLines } from '../lib/svg.mjs';
-import { featured, projects, LANG_COLORS, profile } from '../data.mjs';
-import { ICONS } from './ui.mjs';
+// Tarjetas de proyectos: una destacada con un log de requests y cuatro compactas.
+// Marco fino, índice P-0x, stack en texto plano y lenguajes como cota en tonos de tinta.
+import { C, svg, esc, r2, wrap, textLines } from '../lib/svg.mjs';
+import { featured, projects, profile } from '../data.mjs';
 
-const METHOD = { GET: C.green, POST: C.blue, PATCH: C.amber, PUT: C.violet, DELETE: C.red };
+const tones = () => [C.muted, C.faint, C.rule2, C.rule];
 
+// Lenguajes como una cota: línea de 2px por segmento entre dos remates, leyenda debajo.
 function langBar({ x, y, w, langs, note }) {
+  const T = tones();
   let cx = x;
-  let bar = '';
+  let bar = `<path d="M${x + 0.5} ${y - 3} V${y + 5} M${x + w - 0.5} ${y - 3} V${y + 5}" stroke="${C.rule2}"/>`;
   let legend = '';
   let lx = x;
   langs.forEach(([name, pct], i) => {
     const seg = (w * pct) / 100;
-    const col = LANG_COLORS[name] || C.dim;
-    bar += `<rect x="${r2(cx)}" y="${y}" width="${r2(Math.max(seg - (i < langs.length - 1 ? 2 : 0), 2))}" height="6" fill="${col}"/>`;
+    const col = T[i % T.length];
+    const gapR = i < langs.length - 1 ? 3 : 0;
+    bar += `<rect x="${r2(cx)}" y="${y}" width="${r2(Math.max(seg - gapR, 2))}" height="2" fill="${col}"/>`;
     cx += seg;
-    const label = note && name === 'JSON' ? note : `${name} ${pct}%`;
-    legend += `<circle cx="${r2(lx + 4)}" cy="${y + 22}" r="4" fill="${col}"/><text x="${r2(lx + 13)}" y="${y + 26}" font-size="10.5" class="mono" fill="${C.sub}">${esc(label)}</text>`;
-    lx += label.length * 6.3 + 30;
+    const custom = note && name === 'JSON';
+    const label = custom ? note : `${name} ${pct}%`;
+    const text = custom ? esc(note) : `${esc(name)} <tspan class="mono">${pct}%</tspan>`;
+    legend += `<rect x="${r2(lx)}" y="${y + 17}" width="10" height="2" fill="${col}"/><text x="${r2(lx + 16)}" y="${y + 22}" font-size="11.5" fill="${C.muted}">${text}</text>`;
+    lx += label.length * 6.4 + 34;
   });
   return `
-  <clipPath id="lb-${x}-${y}"><rect x="${x}" y="${y}" width="${w}" height="6" rx="3"/></clipPath>
-  <g clip-path="url(#lb-${x}-${y})"><rect x="${x}" y="${y}" width="${w}" height="6" fill="${C.line}"/>${bar}
-    <rect x="${x}" y="${y}" width="60" height="6" fill="url(#lb-shine)" class="lbshine"/></g>
-  ${legend}`;
+  <g class="in" style="animation-delay:.3s">${bar}
+  ${legend}</g>`;
 }
 
-const SHARED_DEFS = `
-  <linearGradient id="lb-shine" x1="0" x2="1">
-    <stop offset="0" stop-color="#fff" stop-opacity="0"/>
-    <stop offset="0.5" stop-color="#fff" stop-opacity="0.55"/>
-    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-  </linearGradient>`;
-
-const sharedCss = (w) => `
-  .lbshine { animation: lbs 3.6s ease-in-out infinite; }
-  @keyframes lbs { 0% { transform: translateX(-80px); } 70%,100% { transform: translateX(${w}px); } }
-  .float { animation: float 5s ease-in-out infinite; }
-  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
-`;
-
-function iconBox({ x, y, s, color, icon }) {
-  return `
-  <g class="float">
-    <rect x="${x}" y="${y}" width="${s}" height="${s}" rx="${s * 0.28}" fill="${color}" fill-opacity="0.14" stroke="${color}" stroke-opacity="0.55"/>
-    <g transform="translate(${x + (s - 24 * (s / 46)) / 2} ${y + (s - 24 * (s / 46)) / 2}) scale(${r2(s / 46)})" fill="none" stroke="${color}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${icon}</g>
-  </g>`;
+// Parte una lista en líneas sin dejar el separador colgando al inicio de la siguiente.
+function listLines(items, max, sep = ', ') {
+  const lines = [];
+  let cur = '';
+  for (const t of items) {
+    const next = cur ? cur + sep + t : t;
+    if (next.length > max && cur) {
+      lines.push(cur + sep.trimEnd());
+      cur = t;
+    } else cur = next;
+  }
+  if (cur) lines.push(cur);
+  return lines;
 }
 
-// Borde degradado que gira alrededor de la tarjeta.
-function spinBorder({ id, w, h, color, rx = 18, dur = 8 }) {
-  return {
-    defs: `
-  <linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="${w}" y2="${h}">
-    <stop offset="0" stop-color="${color}" stop-opacity="0.9"/>
-    <stop offset="0.35" stop-color="${C.line}" stop-opacity="0.6"/>
-    <stop offset="0.65" stop-color="${C.line}" stop-opacity="0.6"/>
-    <stop offset="1" stop-color="${C.violet}" stop-opacity="0.8"/>
-    <animateTransform attributeName="gradientTransform" type="rotate" from="0 ${w / 2} ${h / 2}" to="360 ${w / 2} ${h / 2}" dur="${dur}s" repeatCount="indefinite"/>
-  </linearGradient>`,
-    svg: `<rect x="0.75" y="0.75" width="${w - 1.5}" height="${h - 1.5}" rx="${rx}" fill="none" stroke="url(#${id})" stroke-width="1.5"/>`,
-  };
-}
+const arrow = (x, y) =>
+  `<path d="M${x} ${y + 9} L${x + 9} ${y} M${x + 1} ${y} H${x + 9} V${y + 8}" fill="none" stroke="${C.muted}" stroke-width="1" stroke-linecap="square"/>`;
 
 export function featuredCard() {
   const W = 900;
   const H = 300;
   const f = featured;
-  const border = spinBorder({ id: 'fb', w: W, h: H, color: C.blue, dur: 10 });
 
-  const px = 532;
-  const py = 22;
-  const pw = W - px - 22;
+  const px = 520;
+  const py = 20;
+  const pw = W - px - 20;
   const rowH = 30;
   const step = 0.7;
   const cycle = r2(step * f.endpoints.length);
@@ -79,47 +62,49 @@ export function featuredCard() {
   let rows = '';
   f.endpoints.forEach(([m, path], i) => {
     const y = py + 44 + i * rowH;
-    const col = METHOD[m];
     const status = m === 'POST' && !path.includes('login') && !path.includes('refresh') && !path.includes('reports') ? '201' : '200';
     rows += `
     <g>
-      <rect x="${px + 8}" y="${y}" width="${pw - 16}" height="${rowH - 4}" rx="7" fill="${col}" class="rowhl" style="animation-delay:${r2(i * step)}s"/>
-      <rect x="${px + 14}" y="${y + 5}" width="48" height="16" rx="4" fill="${col}" fill-opacity="0.16"/>
-      <text x="${px + 38}" y="${y + 17}" text-anchor="middle" font-size="9.5" font-weight="700" class="mono" fill="${col}">${m}</text>
-      <text x="${px + 70}" y="${y + 17}" font-size="10" class="mono" fill="${C.text}">${esc(path)}</text>
-      <text x="${px + pw - 14}" y="${y + 17}" text-anchor="end" font-size="10" class="mono" fill="${C.green}" >${status}</text>
+      <text x="${px + 16}" y="${y + 17}" font-size="11" font-weight="600" class="mono" fill="${C.muted}">${m}</text>
+      <text x="${px + 66}" y="${y + 17}" font-size="11" class="mono" fill="${C.ink}">${esc(path)}</text>
+      <text x="${px + pw - 14}" y="${y + 17}" text-anchor="end" font-size="11" class="mono" fill="${C.muted}">${status}</text>
+      <g class="rowhl" style="animation-delay:${r2(i * step)}s">
+        <rect x="${px + 1}" y="${y}" width="${pw - 2}" height="${rowH - 4}" fill="${C.ink}" fill-opacity="0.06"/>
+        <rect x="${px + 1}" y="${y}" width="2" height="${rowH - 4}" fill="${C.accent}"/>
+        <text x="${px + pw - 14}" y="${y + 17}" text-anchor="end" font-size="11" class="mono" fill="${C.ok}">${status}</text>
+      </g>
     </g>`;
   });
 
   const css = `
-    ${sharedCss(440)}
-    .rowhl { opacity: 0; animation: rowhl ${cycle}s linear infinite; }
-    @keyframes rowhl { 0% { opacity: .16; } ${r2(100 / f.endpoints.length)}% { opacity: 0; } 100% { opacity: 0; } }
+    .rowhl { opacity: 0; animation: rowhl ${cycle}s steps(1, end) infinite; }
+    @keyframes rowhl { 0% { opacity: 1; } ${r2(100 / f.endpoints.length)}% { opacity: 0; } 100% { opacity: 0; } }
     .live { animation: live 1.6s ease-in-out infinite; }
-    @keyframes live { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
+    @keyframes live { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
   `;
 
-  const lines = wrap(f.text, 64);
+  const lines = wrap(f.text, 60);
+  const stackLines = listLines(f.tags, 60);
   const body = `
-  ${panel({ x: 0, y: 0, w: W, h: H, rx: 20, stroke: 'none' })}
-  ${border.svg}
-  ${iconBox({ x: 26, y: 26, s: 54, color: C.blue, icon: ICONS.ticket })}
-  <g>
-    <rect x="96" y="28" width="104" height="22" rx="11" fill="${C.amber}" fill-opacity="0.12" stroke="${C.amber}" stroke-opacity="0.5"/>
-    <text x="148" y="43" text-anchor="middle" font-size="10.5" class="mono" fill="${C.amber}" letter-spacing="1">★ DESTACADO</text>
+  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="2" fill="none" stroke="${C.rule2}"/>
+  <g class="in">
+    <text x="26" y="40" font-size="11" class="mono" fill="${C.faint}">P-01</text>
+    <text x="64" y="40" font-size="12" fill="${C.muted}">Proyecto destacado</text>
+    <text x="24" y="84" font-size="28" font-weight="700" letter-spacing="-0.6" fill="${C.ink}">${esc(f.title)}</text>
+    <text x="26" y="108" font-size="11" class="mono" fill="${C.faint}">${esc(profile.user)}/<tspan fill="${C.muted}">${esc(f.repo)}</tspan></text>
   </g>
-  <text x="96" y="76" font-size="26" font-weight="800" fill="${C.text}">${esc(f.title)}</text>
-  <text x="28" y="112" font-size="11" class="mono" fill="${C.dim}">${esc(profile.user)}/<tspan fill="${C.sub}">${esc(f.repo)}</tspan></text>
-  ${textLines({ x: 28, y: 140, lines, size: 13.5, lh: 1.55 })}
-  ${chipRow({ x: 28, y: 196, labels: f.tags.slice(0, 4), color: C.blue, size: 10.5, gap: 6 })}
-  ${chipRow({ x: 28, y: 224, labels: f.tags.slice(4), color: C.violet, size: 10.5, gap: 6 })}
-  ${langBar({ x: 28, y: 262, w: 470, langs: [['C#', 100]] })}
+  <g class="in" style="animation-delay:.12s">
+    ${textLines({ x: 26, y: 140, lines, size: 13.5, lh: 1.55 })}
+    <path d="M26 ${196.5} H${px - 34}" stroke="${C.rule}"/>
+    ${textLines({ x: 26, y: 218, lines: stackLines, size: 12.5, lh: 1.55, fill: C.ink })}
+  </g>
+  ${langBar({ x: 26, y: 254, w: px - 60, langs: [['C#', 100]] })}
 
-  <rect x="${px}" y="${py}" width="${pw}" height="${H - 2 * py}" rx="14" fill="${C.bg0}" stroke="${C.line}"/>
-  <circle cx="${px + 18}" cy="${py + 20}" r="4" fill="${C.green}" class="live"/>
-  <text x="${px + 30}" y="${py + 24}" font-size="11" class="mono" fill="${C.sub}">requests en vivo</text>
-  <text x="${px + pw - 14}" y="${py + 24}" text-anchor="end" font-size="10.5" class="mono" fill="${C.dim}">localhost:5000</text>
-  <path d="M${px} ${py + 36} H${px + pw}" stroke="${C.line}"/>
+  <rect x="${px + 0.5}" y="${py + 0.5}" width="${pw - 1}" height="${H - 2 * py - 1}" rx="2" fill="${C.ink}" fill-opacity=".025" stroke="${C.rule2}"/>
+  <circle cx="${px + 18}" cy="${py + 19}" r="3" fill="${C.ok}" class="live"/>
+  <text x="${px + 30}" y="${py + 23}" font-size="11" class="mono" fill="${C.ink}">requests</text>
+  <text x="${px + pw - 14}" y="${py + 23}" text-anchor="end" font-size="11" class="mono" fill="${C.muted}">localhost:5000</text>
+  <path d="M${px + 1} ${py + 36.5} H${px + pw - 1}" stroke="${C.rule}"/>
   ${rows}
   `;
 
@@ -128,36 +113,40 @@ export function featuredCard() {
     h: H,
     title: `${f.title} — proyecto destacado`,
     desc: `${f.text} Tecnologías: ${f.tags.join(', ')}.`,
-    defs: SHARED_DEFS + border.defs,
     css,
     body,
   });
 }
 
+// Las tarjetas van de dos en dos: cada SVG lleva medio canal de aire a su lado
+// para que el par llegue justo a los bordes sin espacios entre imágenes.
+const H_CARD = 256;
+
 export function projectCard(p, i) {
-  const W = 440;
-  const H = 256;
-  const border = spinBorder({ id: `pb${i}`, w: W, h: H, color: p.color, dur: 9 + i });
-  const lines = wrap(p.text, 52);
-  const labels = p.demo ? [{ label: '● demo en vivo', color: C.green }, ...p.tags.map((t) => ({ label: t }))] : p.tags;
+  const W = 446;
+  const CW = 440;
+  const off = i % 2 ? W - CW : 0;
+  const lines = wrap(p.text, 54);
   const body = `
-  ${panel({ x: 0, y: 0, w: W, h: H, rx: 18, stroke: 'none' })}
-  ${border.svg}
-  ${iconBox({ x: 22, y: 22, s: 46, color: p.color, icon: ICONS[p.icon] })}
-  <text x="82" y="42" font-size="18" font-weight="700" fill="${C.text}">${esc(p.title)}</text>
-  <text x="82" y="62" font-size="10.5" class="mono" fill="${C.dim}">${esc(p.repo.length > 40 ? p.repo.slice(0, 38) + '…' : p.repo)}</text>
-  <path d="M${W - 36} 30 l8 -8 M${W - 36} 22 h8 v8" fill="none" stroke="${C.sub}" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  ${textLines({ x: 22, y: 102, lines, size: 13, lh: 1.5 })}
-  ${chipRow({ x: 22, y: 166, labels, color: p.color, size: 10.5, gap: 6, maxW: W - 44 })}
-  ${langBar({ x: 22, y: 210, w: W - 44, langs: p.langs, note: p.langNote })}
+  <g transform="translate(${off} 0)">
+  <rect x="0.5" y="0.5" width="${CW - 1}" height="${H_CARD - 1}" rx="2" fill="none" stroke="${C.rule2}"/>
+  <g class="in" style="animation-delay:${r2(i * 0.06)}s">
+    <text x="22" y="34" font-size="11" class="mono" fill="${C.faint}">P-0${i + 2}</text>
+    ${p.demo ? `<text x="64" y="34" font-size="12" fill="${C.muted}">demo en vivo</text>` : ''}
+    ${arrow(CW - 34, 24)}
+    <text x="22" y="66" font-size="18" font-weight="600" letter-spacing="-0.3" fill="${C.ink}">${esc(p.title)}</text>
+    <text x="22" y="86" font-size="11" class="mono" fill="${C.faint}">${esc(p.repo.length > 44 ? p.repo.slice(0, 42) + '…' : p.repo)}</text>
+    ${textLines({ x: 22, y: 116, lines, size: 13, lh: 1.5 })}
+    <text x="22" y="190" font-size="12.5" fill="${C.ink}">${esc(p.tags.join(', '))}</text>
+  </g>
+  ${langBar({ x: 22, y: 214, w: CW - 44, langs: p.langs, note: p.langNote })}
+  </g>
   `;
   return svg({
     w: W,
-    h: H,
+    h: H_CARD,
     title: p.title,
     desc: `${p.text} Tecnologías: ${p.tags.join(', ')}.`,
-    defs: SHARED_DEFS + border.defs,
-    css: sharedCss(W),
     body,
   });
 }

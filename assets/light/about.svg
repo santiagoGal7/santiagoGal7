@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="425" viewBox="0 0 900 425" role="img" aria-labelledby="t d">
+  <title id="t">Sobre mí: terminal con un record de C#</title>
+  <desc id="d">Santiago Gallo, Backend Developer en Colombia. Stack: .NET, Python y JavaScript. Enfoque: APIs REST, Clean Architecture y agentes de IA. Ahora lidera el backend de Nodux.</desc>
+  <style>
+  text { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
+  .mono { font-family: ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+  .draw { stroke-dasharray: 1; animation: draw 1.1s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes draw { from { stroke-dashoffset: 1; } }
+  .in { animation: in .7s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes in { from { opacity: 0; transform: translateY(6px); } }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; }
+  }
+
+  .blink { animation: blink 1.05s steps(1, end) infinite; }
+  @keyframes blink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
+</style>
+  <defs>
+  <pattern id="p-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V6" stroke="#B9B1A0" stroke-width="1"/>
+  </pattern>
+  <pattern id="p-hatch-a" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V5" stroke="#C2410C" stroke-width="1.2"/>
+  </pattern>
+  <pattern id="p-grid" width="12" height="12" patternUnits="userSpaceOnUse">
+    <path d="M12 0 H0 V12" fill="none" stroke="#DDD7CA" stroke-width="0.6"/>
+  </pattern>
+
+    <mask id="cmd1" maskUnits="userSpaceOnUse">
+      <rect x="46.8" y="58" height="22" width="0" fill="#fff">
+        <animate attributeName="width" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;8.4;16.8;25.2;33.6;42;50.4;58.8;67.2;75.6;84;92.4;100.8;109.2;117.6;126;134.4;0" keyTimes="0.0000;0.0337;0.0375;0.0412;0.0450;0.0488;0.0525;0.0563;0.0600;0.0638;0.0675;0.0712;0.0750;0.0788;0.0825;0.0863;0.0900;0.9600"/>
+      </rect>
+    </mask>
+    <mask id="cmd2" maskUnits="userSpaceOnUse">
+      <rect x="46.8" y="311" height="22" width="0" fill="#fff">
+        <animate attributeName="width" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;8.4;16.8;25.2;33.6;42;50.4;58.8;67.2;75.6;84;0" keyTimes="0.0000;0.1988;0.2025;0.2062;0.2100;0.2138;0.2175;0.2213;0.2250;0.2288;0.2325;0.9600"/>
+      </rect>
+    </mask></defs>
+
+  <rect x="0.5" y="0.5" width="899" height="424" rx="2" fill="#1E1C18" fill-opacity=".025" stroke="#B9B1A0"/>
+  <path d="M1 40.5 H899" stroke="#DDD7CA"/>
+  <text x="30" y="25" font-size="12" class="mono" fill="#1E1C18">Developer.cs</text>
+  <text x="134" y="25" font-size="12" class="mono" fill="#5F5A50">~/perfil</text>
+  <text x="878" y="25" text-anchor="end" font-size="12" class="mono" fill="#5F5A50">pwsh</text>
+  
+    <g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.0125;0.9600"/>
+      <text x="30" y="74" font-size="14" class="mono" fill="#C2410C">$</text>
+    </g>
+    <text x="46.8" y="74" font-size="14" class="mono" fill="#1E1C18" textLength="134.4" lengthAdjust="spacingAndGlyphs" mask="url(#cmd1)">cat Developer.cs</text>
+    <rect x="47.8" y="62" width="8" height="16" fill="#C2410C">
+      <animate attributeName="x" dur="20s" repeatCount="indefinite" calcMode="discrete" values="47.8;56.2;64.6;73;81.4;89.8;98.2;106.6;115;123.4;131.8;140.2;148.6;157;165.4;173.8;182.2" keyTimes="0.0000;0.0337;0.0375;0.0412;0.0450;0.0488;0.0525;0.0563;0.0600;0.0638;0.0675;0.0712;0.0750;0.0788;0.0825;0.0863;0.0900"/>
+      <animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.0125;0.1050"/>
+    </rect><g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1050;0.9600"/><text y="120" font-size="14" class="mono"><tspan x="30" fill="#5F5A50">public </tspan><tspan x="88.8" fill="#5F5A50">sealed </tspan><tspan x="147.6" fill="#5F5A50">record </tspan><tspan x="206.4" fill="#1E1C18">Developer</tspan></text></g><g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1105;0.9600"/><text y="143" font-size="14" class="mono"><tspan x="30" fill="#5F5A50">{</tspan></text></g><g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1160;0.9600"/><text y="166" font-size="14" class="mono"><tspan x="63.6" fill="#5F5A50">public </tspan><tspan x="122.4" fill="#1E1C18">string   </tspan><tspan x="198" fill="#1E1C18">Name     </tspan><tspan x="273.6" fill="#5F5A50">=&gt; </tspan><tspan x="298.8" fill="#1E1C18">&quot;Santiago Gallo&quot;</tspan><tspan fill="#5F5A50">;</tspan></text></g><g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1215;0.9600"/><text y="189" font-size="14" class="mono"><tspan x="63.6" fill="#5F5A50">public </tspan><tspan x="122.4" fill="#1E1C18">string   </tspan><tspan x="198" fill="#1E1C18">Role     </tspan><tspan x="273.6" fill="#5F5A50">=&gt; </tspan><tspan x="298.8" fill="#1E1C18">&quot;Backend Developer&quot;</tspan><tspan fill="#5F5A50">;</tspan></text></g><g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1270;0.9600"/><text y="212" font-size="14" class="mono"><tspan x="63.6" fill="#5F5A50">public </tspan><tspan x="122.4" fill="#1E1C18">string   </tspan><tspan x="198" fill="#1E1C18">Location </tspan><tspan x="273.6" fill="#5F5A50">=&gt; </tspan><tspan x="298.8" fill="#1E1C18">&quot;Colombia&quot;</tspan><tspan fill="#5F5A50">;</tspan></text></g><g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1325;0.9600"/><text y="235" font-size="14" class="mono"><tspan x="63.6" fill="#5F5A50">public </tspan><tspan x="122.4" fill="#1E1C18">string[] </tspan><tspan x="198" fill="#1E1C18">Stack    </tspan><tspan x="273.6" fill="#5F5A50">=&gt; </tspan><tspan x="298.8" fill="#5F5A50">[</tspan><tspan fill="#1E1C18">&quot;.NET&quot;</tspan><tspan fill="#5F5A50">, </tspan><tspan x="374.4" fill="#1E1C18">&quot;Python&quot;</tspan><tspan fill="#5F5A50">, </tspan><tspan x="458.4" fill="#1E1C18">&quot;JavaScript&quot;</tspan><tspan fill="#5F5A50">]</tspan><tspan fill="#5F5A50">;</tspan></text></g><g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1380;0.9600"/><text y="258" font-size="14" class="mono"><tspan x="63.6" fill="#5F5A50">public </tspan><tspan x="122.4" fill="#1E1C18">string[] </tspan><tspan x="198" fill="#1E1C18">Focus    </tspan><tspan x="273.6" fill="#5F5A50">=&gt; </tspan><tspan x="298.8" fill="#5F5A50">[</tspan><tspan fill="#1E1C18">&quot;APIs REST&quot;</tspan><tspan fill="#5F5A50">, </tspan><tspan x="416.4" fill="#1E1C18">&quot;Clean Architecture&quot;</tspan><tspan fill="#5F5A50">, </tspan><tspan x="601.2" fill="#1E1C18">&quot;Agentes de IA&quot;</tspan><tspan fill="#5F5A50">]</tspan><tspan fill="#5F5A50">;</tspan></text></g><g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1435;0.9600"/><text y="281" font-size="14" class="mono"><tspan x="63.6" fill="#5F5A50">public </tspan><tspan x="122.4" fill="#1E1C18">string   </tspan><tspan x="198" fill="#1E1C18">Now      </tspan><tspan x="273.6" fill="#5F5A50">=&gt; </tspan><tspan x="298.8" fill="#1E1C18">&quot;Liderando el backend de Nodux&quot;</tspan><tspan fill="#5F5A50">;</tspan></text></g><g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1490;0.9600"/><text y="304" font-size="14" class="mono"><tspan x="30" fill="#5F5A50">}</tspan></text></g>
+    <g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1775;0.9600"/>
+      <text x="30" y="327" font-size="14" class="mono" fill="#C2410C">$</text>
+    </g>
+    <text x="46.8" y="327" font-size="14" class="mono" fill="#1E1C18" textLength="84" lengthAdjust="spacingAndGlyphs" mask="url(#cmd2)">dotnet run</text>
+    <rect x="47.8" y="315" width="8" height="16" fill="#C2410C">
+      <animate attributeName="x" dur="20s" repeatCount="indefinite" calcMode="discrete" values="47.8;56.2;64.6;73;81.4;89.8;98.2;106.6;115;123.4;131.8" keyTimes="0.0000;0.1988;0.2025;0.2062;0.2100;0.2138;0.2175;0.2213;0.2250;0.2288;0.2325"/>
+      <animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.1775;0.2450"/>
+    </rect>
+    <g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.2450;0.2850"/><text x="30" y="350" font-size="14" class="mono" fill="#5F5A50">Compilando Developer.csproj...</text></g>
+    <g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.2850;0.9600"/><text y="350" font-size="14" class="mono"><tspan x="30" fill="#1E7A4C">Build succeeded</tspan><tspan fill="#5F5A50"> in 1.4s</tspan></text></g>
+    <g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.3100;0.9600"/><text y="373" font-size="14" class="mono"><tspan x="30" fill="#1E1C18">¡Hola! Gracias por pasar por mi perfil.</tspan></text></g>
+    <g><animate attributeName="opacity" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;1;0" keyTimes="0;0.3300;0.9600"/>
+      <text x="30" y="396" font-size="14" class="mono" fill="#C2410C">$</text>
+      <rect x="47.8" y="384" width="8" height="16" fill="#C2410C" class="blink"/>
+    </g>
+</svg>

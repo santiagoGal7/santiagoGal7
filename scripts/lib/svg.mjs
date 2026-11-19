@@ -1,36 +1,61 @@
 // Sistema de diseño compartido por todos los SVG del perfil.
 // Los SVG se cargan dentro de <img> en GitHub: nada de JS ni fuentes externas.
 // Las animaciones usan CSS (@keyframes) y SMIL, que sí funcionan en ese contexto.
+//
+// Dirección "Plano": tinta sobre papel y un solo color de señal, como un juego de
+// planos técnicos. Cada asset se genera dos veces (tema oscuro y claro) y el README
+// elige con <picture>, así que el fondo es transparente y se integra con GitHub.
 
-export const C = {
-  bg0: '#050816',
-  bg1: '#0A1128',
-  panel: '#0C142B',
-  panel2: '#111B38',
-  line: '#1D2A4D',
-  text: '#E6EDF3',
-  sub: '#A3B0C6',
-  dim: '#5F6C88',
-  blue: '#58A6FF',
-  blueDeep: '#1C7ED6',
-  cyan: '#22D3EE',
-  violet: '#A78BFA',
-  purple: '#8B5CF6',
-  pink: '#F472B6',
-  green: '#3FB950',
-  amber: '#FBBF24',
-  orange: '#FB923C',
-  red: '#F87171',
+export const THEMES = {
+  dark: {
+    paper: '#15140F',
+    paper2: '#1D1B16',
+    ink: '#ECE6D9',
+    muted: '#A8A193',
+    faint: '#8C8577',
+    rule: '#3A372F',
+    rule2: '#55503F',
+    accent: '#F2762E',
+    accentInk: '#1A0D04',
+    ok: '#6CBF8E',
+    err: '#E8664F',
+  },
+  light: {
+    paper: '#F7F4EC',
+    paper2: '#EFEAE0',
+    ink: '#1E1C18',
+    muted: '#5F5A50',
+    faint: '#7A7365',
+    rule: '#DDD7CA',
+    rule2: '#B9B1A0',
+    accent: '#C2410C',
+    accentInk: '#FFFFFF',
+    ok: '#1E7A4C',
+    err: '#B42318',
+  },
 };
 
+// Paleta activa. Los componentes la leen al renderizar, nunca al importar.
+export const C = { ...THEMES.dark };
+export let THEME = 'dark';
+
+export function setTheme(name) {
+  if (!THEMES[name]) throw new Error(`Tema desconocido: ${name}`);
+  THEME = name;
+  Object.assign(C, THEMES[name]);
+}
+
 export const FONT = {
-  sans: "'Segoe UI', -apple-system, BlinkMacSystemFont, Inter, 'Helvetica Neue', Arial, sans-serif",
-  mono: "'JetBrains Mono', 'Cascadia Code', 'SF Mono', ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace",
+  sans: "'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif",
+  mono: "ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
 };
 
 // Ancho medio de un carácter monoespaciado respecto al tamaño de fuente.
 // Se fuerza con textLength para que el cursor y las máscaras de tipeo cuadren.
 export const MONO_RATIO = 0.6;
+
+// Curva de salida común para todo lo que entra en escena.
+export const EASE = 'cubic-bezier(.16,1,.3,1)';
 
 export const esc = (s) =>
   String(s)
@@ -41,84 +66,105 @@ export const esc = (s) =>
 
 export const r2 = (n) => Math.round(n * 100) / 100;
 
-const BASE_CSS = `
+// .draw: el trazo se dibuja una vez (requiere pathLength="1").
+// .in: aparece una vez con un desplazamiento corto.
+// El estado final vive en los atributos: sin animación se ve todo completo.
+const baseCss = () => `
   text { font-family: ${FONT.sans}; }
   .mono { font-family: ${FONT.mono}; }
+  .draw { stroke-dasharray: 1; animation: draw 1.1s ${EASE} backwards; }
+  @keyframes draw { from { stroke-dashoffset: 1; } }
+  .in { animation: in .7s ${EASE} backwards; }
+  @keyframes in { from { opacity: 0; transform: translateY(6px); } }
   @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; }
   }
 `;
 
-// Degradados y filtros que reutilizan casi todos los componentes.
-export const COMMON_DEFS = `
-  <linearGradient id="g-bg" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="${C.bg0}"/>
-    <stop offset="1" stop-color="${C.bg1}"/>
-  </linearGradient>
-  <linearGradient id="g-panel" x1="0" y1="0" x2="0" y2="1">
-    <stop offset="0" stop-color="${C.panel2}"/>
-    <stop offset="1" stop-color="${C.panel}"/>
-  </linearGradient>
-  <linearGradient id="g-brand" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="${C.blue}"/>
-    <stop offset="0.5" stop-color="${C.cyan}"/>
-    <stop offset="1" stop-color="${C.violet}"/>
-  </linearGradient>
-  <linearGradient id="g-stroke" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="${C.blue}" stop-opacity="0.55"/>
-    <stop offset="0.5" stop-color="${C.line}" stop-opacity="0.9"/>
-    <stop offset="1" stop-color="${C.violet}" stop-opacity="0.55"/>
-  </linearGradient>
-  <filter id="f-glow" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="3" result="b"/>
-    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-  </filter>
-  <filter id="f-soft" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="8"/>
-  </filter>
+// Patrones de dibujo técnico: rayado a 45° y retícula fina.
+const commonDefs = () => `
+  <pattern id="p-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V6" stroke="${C.rule2}" stroke-width="1"/>
+  </pattern>
+  <pattern id="p-hatch-a" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V5" stroke="${C.accent}" stroke-width="1.2"/>
+  </pattern>
+  <pattern id="p-grid" width="12" height="12" patternUnits="userSpaceOnUse">
+    <path d="M12 0 H0 V12" fill="none" stroke="${C.rule}" stroke-width="0.6"/>
+  </pattern>
 `;
 
 export function svg({ w, h, title, desc = '', defs = '', css = '', body }) {
   return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="t d">
   <title id="t">${esc(title)}</title>
   <desc id="d">${esc(desc || title)}</desc>
-  <style>${BASE_CSS}${css}</style>
-  <defs>${COMMON_DEFS}${defs}</defs>
+  <style>${baseCss()}${css}</style>
+  <defs>${commonDefs()}${defs}</defs>
 ${body}
 </svg>
 `;
 }
 
-// Panel "glass" con borde degradado y brillo superior.
-export function panel({ x = 0, y = 0, w, h, rx = 18, stroke = 'url(#g-stroke)', fill = 'url(#g-panel)' }) {
+// Caja plana para objetos reales (terminal, log, tarjetas). Radio 2 o 4, trazo 1px.
+export function panel({ x = 0, y = 0, w, h, rx = 2, stroke = C.rule2, fill = C.paper }) {
   return `
-  <rect x="${x + 0.5}" y="${y + 0.5}" width="${w - 1}" height="${h - 1}" rx="${rx}" fill="${fill}" stroke="${stroke}"/>
-  <path d="M${x + rx} ${y + 1.5} H${x + w - rx}" stroke="#FFFFFF" stroke-opacity="0.08"/>`;
+  <rect x="${x + 0.5}" y="${y + 0.5}" width="${w - 1}" height="${h - 1}" rx="${rx}" fill="${fill}" stroke="${stroke}"/>`;
 }
 
-// Chip de texto (pill). Devuelve { svg, w } para poder encadenar.
-export function chip({ x, y, label, color = C.blue, size = 11, padX = 10, h = 22, mono = true }) {
-  const w = Math.round(label.length * size * (mono ? MONO_RATIO : 0.56) + padX * 2);
+// Etiqueta de texto mono con borde fino. accent=true solo para el dato principal.
+export function chip({ x, y, label, accent = false, size = 11, padX = 7, h = 20 }) {
+  const w = Math.round(label.length * size * MONO_RATIO + padX * 2);
+  const color = accent ? C.accent : C.muted;
   return {
     w,
     svg: `
   <g>
-    <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${h / 2}" fill="${color}" fill-opacity="0.12" stroke="${color}" stroke-opacity="0.45"/>
-    <text x="${x + w / 2}" y="${y + h / 2 + size * 0.36}" text-anchor="middle" font-size="${size}" fill="${color}" class="${mono ? 'mono' : ''}">${esc(label)}</text>
+    <rect x="${x + 0.5}" y="${y + 0.5}" width="${w - 1}" height="${h - 1}" rx="2" fill="none" stroke="${accent ? C.accent : C.rule2}"/>
+    <text x="${x + padX}" y="${r2(y + h / 2 + size * 0.36)}" font-size="${size}" fill="${color}" class="mono">${esc(label)}</text>
   </g>`,
   };
 }
 
-export function chipRow({ x, y, labels, gap = 8, maxW = Infinity, ...rest }) {
+export function chipRow({ x, y, labels, gap = 6, maxW = Infinity, ...rest }) {
   let cx = x;
   let out = '';
   for (const item of labels) {
-    const { label, color } = typeof item === 'string' ? { label: item } : item;
-    const c = chip({ x: cx, y, label, color: color || rest.color, ...rest });
+    const { label, accent } = typeof item === 'string' ? { label: item } : item;
+    const c = chip({ x: cx, y, label, accent: accent ?? rest.accent, ...rest });
     if (cx + c.w - x > maxW) break;
     out += c.svg;
     cx += c.w + gap;
   }
+  return out;
+}
+
+// Cota: línea de medida con remates verticales en los extremos.
+export function cota({ x1, x2, y, tick = 8, color = C.rule2, draw = false, delay = 0 }) {
+  const anim = draw ? ` pathLength="1" class="draw" style="animation-delay:${delay}s"` : '';
+  return `
+  <path d="M${x1 + 0.5} ${y - tick / 2} V${y + tick / 2} M${x2 - 0.5} ${y - tick / 2} V${y + tick / 2}" stroke="${color}"/>
+  <path d="M${x1} ${y + 0.5} H${x2}" stroke="${color}"${anim}/>`;
+}
+
+// Cruz de registro para esquinas de plano.
+export function cross(x, y, s = 5, color = C.rule2) {
+  return `<path d="M${x - s} ${y} H${x + s} M${x} ${y - s} V${y + s}" stroke="${color}"/>`;
+}
+
+// Cajetín: tabla de una fila con celdas [etiqueta, valor], alineada a la derecha en (x2, y).
+// Con `base` se apoya sobre una línea que corre desde x = base hasta el cajetín.
+export function titleBlock({ x2, y, cells, h = 40, base }) {
+  const widths = cells.map(([k, v]) => Math.round(Math.max(k.length * 11 * 0.55, v.length * 12.5 * 0.56) + 22));
+  const total = widths.reduce((a, b) => a + b, 0);
+  let x = x2 - total;
+  let out = base === undefined ? '' : `<path d="M${base} ${y + h - 0.5} H${x}" stroke="${C.rule2}"/>`;
+  out += `<rect x="${x + 0.5}" y="${y + 0.5}" width="${total - 1}" height="${h - 1}" fill="none" stroke="${C.rule2}"/>`;
+  cells.forEach(([k, v], i) => {
+    if (i) out += `<path d="M${x + 0.5} ${y} V${y + h}" stroke="${C.rule2}"/>`;
+    out += `<text x="${x + 10}" y="${y + 15}" font-size="11" fill="${C.muted}">${esc(k)}</text>`;
+    out += `<text x="${x + 10}" y="${y + 31}" font-size="12.5" font-weight="500" fill="${C.ink}">${esc(v)}</text>`;
+    x += widths[i];
+  });
   return out;
 }
 
@@ -139,7 +185,7 @@ export function wrap(text, maxChars) {
   return lines;
 }
 
-export function textLines({ x, y, lines, size = 13, lh = 1.5, fill = C.sub, cls = '', anchor = 'start', weight }) {
+export function textLines({ x, y, lines, size = 13, lh = 1.5, fill = C.muted, cls = '', anchor = 'start', weight }) {
   return lines
     .map(
       (l, i) =>
@@ -161,7 +207,7 @@ export function typewriter({
   typeStep = 0.07,
   deleteStep = 0.025,
   hold = 1.8,
-  cursorColor = C.cyan,
+  cursorColor = C.accent,
 }) {
   const cw = size * MONO_RATIO;
   const slot = cycle / phrases.length;
@@ -195,7 +241,7 @@ export function typewriter({
     </rect>
   </mask>`;
     body += `
-  <text x="${x}" y="${y}" font-size="${size}" class="mono" fill="${p.fill || C.text}" textLength="${r2(L * cw)}" lengthAdjust="spacingAndGlyphs" mask="url(#${id}-m${i})">${esc(p.text)}</text>`;
+  <text x="${x}" y="${y}" font-size="${size}" class="mono" fill="${p.fill || C.ink}" textLength="${r2(L * cw)}" lengthAdjust="spacingAndGlyphs" mask="url(#${id}-m${i})">${esc(p.text)}</text>`;
     for (const [t, w] of clean) if (t > 0) cursorEvents.push([t, w]);
   });
 

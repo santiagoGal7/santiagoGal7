@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="446" height="256" viewBox="0 0 446 256" role="img" aria-labelledby="t d">
+  <title id="t">Hotel El Rincón del Carmen</title>
+  <desc id="d">Web para explorar el hotel y gestionar reservas, con animaciones y formularios validados. Tecnologías: React 19, TypeScript, Tailwind, GSAP.</desc>
+  <style>
+  text { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
+  .mono { font-family: ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+  .draw { stroke-dasharray: 1; animation: draw 1.1s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes draw { from { stroke-dashoffset: 1; } }
+  .in { animation: in .7s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes in { from { opacity: 0; transform: translateY(6px); } }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; }
+  }
+</style>
+  <defs>
+  <pattern id="p-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V6" stroke="#B9B1A0" stroke-width="1"/>
+  </pattern>
+  <pattern id="p-hatch-a" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V5" stroke="#C2410C" stroke-width="1.2"/>
+  </pattern>
+  <pattern id="p-grid" width="12" height="12" patternUnits="userSpaceOnUse">
+    <path d="M12 0 H0 V12" fill="none" stroke="#DDD7CA" stroke-width="0.6"/>
+  </pattern>
+</defs>
+
+  <g transform="translate(6 0)">
+  <rect x="0.5" y="0.5" width="439" height="255" rx="2" fill="none" stroke="#B9B1A0"/>
+  <g class="in" style="animation-delay:0.18s">
+    <text x="22" y="34" font-size="11" class="mono" fill="#7A7365">P-05</text>
+    <text x="64" y="34" font-size="12" fill="#5F5A50">demo en vivo</text>
+    <path d="M406 33 L415 24 M407 24 H415 V32" fill="none" stroke="#5F5A50" stroke-width="1" stroke-linecap="square"/>
+    <text x="22" y="66" font-size="18" font-weight="600" letter-spacing="-0.3" fill="#1E1C18">Hotel El Rincón del Carmen</text>
+    <text x="22" y="86" font-size="11" class="mono" fill="#7A7365">HotelRincondelCarmen</text>
+    <text x="22" y="116" font-size="13" fill="#5F5A50" text-anchor="start">Web para explorar el hotel y gestionar reservas, con</text>
+  <text x="22" y="135.5" font-size="13" fill="#5F5A50" text-anchor="start">animaciones y formularios validados.</text>
+    <text x="22" y="190" font-size="12.5" fill="#1E1C18">React 19, TypeScript, Tailwind, GSAP</text>
+  </g>
+  
+  <g class="in" style="animation-delay:.3s"><path d="M22.5 211 V219 M417.5 211 V219" stroke="#B9B1A0"/><rect x="22" y="214" width="366.86" height="2" fill="#5F5A50"/><rect x="391.86" y="214" width="18.38" height="2" fill="#7A7365"/><rect x="413.25" y="214" width="4.75" height="2" fill="#B9B1A0"/>
+  <rect x="22" y="231" width="10" height="2" fill="#5F5A50"/><text x="38" y="236" font-size="11.5" fill="#5F5A50">TypeScript <tspan class="mono">93.4%</tspan></text><rect x="158.4" y="231" width="10" height="2" fill="#7A7365"/><text x="174.4" y="236" font-size="11.5" fill="#5F5A50">CSS <tspan class="mono">5.4%</tspan></text><rect x="243.6" y="231" width="10" height="2" fill="#B9B1A0"/><text x="259.6" y="236" font-size="11.5" fill="#5F5A50">HTML <tspan class="mono">1.2%</tspan></text></g>
+  </g>
+  
+</svg>

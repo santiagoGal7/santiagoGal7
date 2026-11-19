@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="60" viewBox="0 0 900 60" role="img" aria-labelledby="t d">
+  <title id="t">Sobre mí</title>
+  <desc id="d">Sección 01: Sobre mí</desc>
+  <style>
+  text { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
+  .mono { font-family: ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+  .draw { stroke-dasharray: 1; animation: draw 1.1s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes draw { from { stroke-dashoffset: 1; } }
+  .in { animation: in .7s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes in { from { opacity: 0; transform: translateY(6px); } }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; }
+  }
+</style>
+  <defs>
+  <pattern id="p-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V6" stroke="#B9B1A0" stroke-width="1"/>
+  </pattern>
+  <pattern id="p-hatch-a" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V5" stroke="#C2410C" stroke-width="1.2"/>
+  </pattern>
+  <pattern id="p-grid" width="12" height="12" patternUnits="userSpaceOnUse">
+    <path d="M12 0 H0 V12" fill="none" stroke="#DDD7CA" stroke-width="0.6"/>
+  </pattern>
+</defs>
+
+  <text x="0" y="31" font-size="13" font-weight="600" class="mono" fill="#C2410C">01</text>
+  <text x="34" y="32" font-size="24" font-weight="600" letter-spacing="-0.3" fill="#1E1C18">Sobre mí</text>
+  <text x="900" y="31" text-anchor="end" font-size="13" fill="#5F5A50">record de C#</text>
+  
+  <path d="M0.5 44 V52 M899.5 44 V52" stroke="#B9B1A0"/>
+  <path d="M0 48.5 H900" stroke="#B9B1A0" pathLength="1" class="draw" style="animation-delay:0s"/>
+  
+</svg>

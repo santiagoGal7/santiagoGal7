@@ -2,17 +2,11 @@
 // Todo en bucle con SMIL discreto para que parezca una terminal real.
 import { C, svg, esc, r2, MONO_RATIO, BLINK_CSS } from '../lib/svg.mjs';
 
-const K = {
-  kw: C.violet,
-  type: C.cyan,
-  prop: C.blue,
-  str: '#9ECE6A',
-  p: C.sub,
-  bool: C.orange,
-  ok: C.green,
-  dim: C.dim,
-  text: C.text,
-};
+// Dos tonos: tinta para nombres y valores, apagado para palabras clave y puntuación.
+// El acento queda solo para el prompt y el cursor. Se rellena al renderizar.
+const K = {};
+const setTones = () =>
+  Object.assign(K, { kw: C.muted, type: C.ink, prop: C.ink, str: C.ink, p: C.muted, bool: C.ink, ok: C.ok, dim: C.muted, text: C.ink });
 
 // Cada línea: lista de [texto, color]. Los espacios se respetan por columnas.
 const prop = (type, name, value, valueColor = K.str) => [
@@ -34,7 +28,7 @@ const list = (items) => {
   return out;
 };
 
-const CODE = [
+const buildCode = () => [
   [['public ', K.kw], ['sealed ', K.kw], ['record ', K.kw], ['Developer', K.type]],
   [['{', K.p]],
   prop('string', 'Name', ['"Santiago Gallo"']),
@@ -43,11 +37,12 @@ const CODE = [
   prop('string[]', 'Stack', list(['.NET', 'Python', 'JavaScript'])),
   prop('string[]', 'Focus', list(['APIs REST', 'Clean Architecture', 'Agentes de IA'])),
   prop('string', 'Now', ['"Liderando el backend de Nodux"']),
-  prop('bool', 'Coffee', [['true', K.bool]]),
   [['}', K.p]],
 ];
 
 export function about() {
+  setTones();
+  const CODE = buildCode();
   const W = 900;
   const D = 20; // ciclo en segundos
   const OFF = 19.2; // se limpia la pantalla
@@ -56,7 +51,7 @@ export function about() {
   const lh = 23;
   const x0 = 30;
   const y0 = 74;
-  const rows = 16;
+  const rows = 15;
   const H = y0 + rows * lh + 6;
   const kt = (t) => (t / D).toFixed(4);
 
@@ -107,10 +102,10 @@ export function about() {
     const ckeys = ev.slice(0, -1).map(([t]) => kt(t)).join(';');
     body += `
     <g>${vis(start - 0.35)}
-      <text x="${x0}" y="${y}" font-size="${size}" class="mono" fill="${C.green}">$</text>
+      <text x="${x0}" y="${y}" font-size="${size}" class="mono" fill="${C.accent}">$</text>
     </g>
-    <text x="${r2(tx)}" y="${y}" font-size="${size}" class="mono" fill="${C.text}" textLength="${r2(cmd.length * cw)}" lengthAdjust="spacingAndGlyphs" mask="url(#${id})">${esc(cmd)}</text>
-    <rect x="${r2(tx + 1)}" y="${y - 12}" width="8" height="16" fill="${C.cyan}">
+    <text x="${r2(tx)}" y="${y}" font-size="${size}" class="mono" fill="${C.ink}" textLength="${r2(cmd.length * cw)}" lengthAdjust="spacingAndGlyphs" mask="url(#${id})">${esc(cmd)}</text>
+    <rect x="${r2(tx + 1)}" y="${y - 12}" width="8" height="16" fill="${C.accent}">
       <animate attributeName="x" dur="${D}s" repeatCount="indefinite" calcMode="discrete" values="${cvals}" keyTimes="${ckeys}"/>
       ${vis(start - 0.35, cursorOff)}
     </rect>`;
@@ -123,28 +118,25 @@ export function about() {
     body += `<g>${vis(t)}${renderTokens(tokens, lineY(2 + k))}</g>`;
   });
 
-  typed('cmd2', 12, 'dotnet run', 3.9, 4.9);
+  typed('cmd2', 11, 'dotnet run', 3.9, 4.9);
 
   body += `
-    <g>${vis(4.9, 5.7)}<text x="${x0}" y="${lineY(13)}" font-size="${size}" class="mono" fill="${C.dim}">Compilando Developer.csproj...</text></g>
-    <g>${vis(5.7)}<text y="${lineY(13)}" font-size="${size}" class="mono"><tspan x="${x0}" fill="${C.green}">✓ Build succeeded</tspan><tspan fill="${C.dim}"> · 0 warnings · 0 errors · 1.42s</tspan></text></g>
-    <g>${vis(6.2)}<text y="${lineY(14)}" font-size="${size}" class="mono"><tspan x="${x0}" fill="${C.cyan}">→</tspan><tspan fill="${C.text}"> ¡Hola! Gracias por pasar por mi perfil.</tspan></text></g>
+    <g>${vis(4.9, 5.7)}<text x="${x0}" y="${lineY(12)}" font-size="${size}" class="mono" fill="${C.muted}">Compilando Developer.csproj...</text></g>
+    <g>${vis(5.7)}<text y="${lineY(12)}" font-size="${size}" class="mono"><tspan x="${x0}" fill="${C.ok}">Build succeeded</tspan><tspan fill="${C.muted}"> in 1.4s</tspan></text></g>
+    <g>${vis(6.2)}<text y="${lineY(13)}" font-size="${size}" class="mono"><tspan x="${x0}" fill="${C.ink}">¡Hola! Gracias por pasar por mi perfil.</tspan></text></g>
     <g>${vis(6.6)}
-      <text x="${x0}" y="${lineY(15)}" font-size="${size}" class="mono" fill="${C.green}">$</text>
-      <rect x="${r2(x0 + 2 * cw + 1)}" y="${lineY(15) - 12}" width="8" height="16" fill="${C.cyan}" class="blink"/>
+      <text x="${x0}" y="${lineY(14)}" font-size="${size}" class="mono" fill="${C.accent}">$</text>
+      <rect x="${r2(x0 + 2 * cw + 1)}" y="${lineY(14) - 12}" width="8" height="16" fill="${C.accent}" class="blink"/>
     </g>`;
 
   const css = `${BLINK_CSS}`;
 
   const chrome = `
-  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="16" fill="${C.bg0}" stroke="url(#g-stroke)"/>
-  <path d="M1 44 H${W - 1}" stroke="${C.line}"/>
-  <path d="M16.5 0.5 H${W - 16.5} A16 16 0 0 1 ${W - 0.5} 16.5 V44 H0.5 V16.5 A16 16 0 0 1 16.5 0.5z" fill="${C.panel2}"/>
-  <circle cx="24" cy="22" r="6" fill="#FF5F57"/>
-  <circle cx="44" cy="22" r="6" fill="#FEBC2E"/>
-  <circle cx="64" cy="22" r="6" fill="#28C840"/>
-  <text x="${W / 2}" y="27" text-anchor="middle" font-size="12.5" class="mono" fill="${C.sub}">santiago@dev: ~/perfil</text>
-  <text x="${W - 22}" y="27" text-anchor="end" font-size="11" class="mono" fill="${C.dim}">pwsh · UTF-8</text>
+  <rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="2" fill="${C.ink}" fill-opacity=".025" stroke="${C.rule2}"/>
+  <path d="M1 40.5 H${W - 1}" stroke="${C.rule}"/>
+  <text x="${x0}" y="25" font-size="12" class="mono" fill="${C.ink}">Developer.cs</text>
+  <text x="${x0 + 104}" y="25" font-size="12" class="mono" fill="${C.muted}">~/perfil</text>
+  <text x="${W - 22}" y="25" text-anchor="end" font-size="12" class="mono" fill="${C.muted}">pwsh</text>
   `;
 
   return svg({

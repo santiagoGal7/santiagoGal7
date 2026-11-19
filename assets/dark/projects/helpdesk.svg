@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="300" viewBox="0 0 900 300" role="img" aria-labelledby="t d">
+  <title id="t">HelpDesk Backend — proyecto destacado</title>
+  <desc id="d">API REST para mesa de ayuda: tickets, usuarios, roles, asignaciones, alertas y reportes. Autenticación JWT con refresh tokens y pruebas unitarias y de integración. Tecnologías: .NET 10, ASP.NET Core, EF Core, PostgreSQL, MediatR, FluentValidation, xUnit.</desc>
+  <style>
+  text { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
+  .mono { font-family: ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+  .draw { stroke-dasharray: 1; animation: draw 1.1s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes draw { from { stroke-dashoffset: 1; } }
+  .in { animation: in .7s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes in { from { opacity: 0; transform: translateY(6px); } }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; }
+  }
+
+    .rowhl { opacity: 0; animation: rowhl 4.9s steps(1, end) infinite; }
+    @keyframes rowhl { 0% { opacity: 1; } 14.29% { opacity: 0; } 100% { opacity: 0; } }
+    .live { animation: live 1.6s ease-in-out infinite; }
+    @keyframes live { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+  </style>
+  <defs>
+  <pattern id="p-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V6" stroke="#55503F" stroke-width="1"/>
+  </pattern>
+  <pattern id="p-hatch-a" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V5" stroke="#F2762E" stroke-width="1.2"/>
+  </pattern>
+  <pattern id="p-grid" width="12" height="12" patternUnits="userSpaceOnUse">
+    <path d="M12 0 H0 V12" fill="none" stroke="#3A372F" stroke-width="0.6"/>
+  </pattern>
+</defs>
+
+  <rect x="0.5" y="0.5" width="899" height="299" rx="2" fill="none" stroke="#55503F"/>
+  <g class="in">
+    <text x="26" y="40" font-size="11" class="mono" fill="#8C8577">P-01</text>
+    <text x="64" y="40" font-size="12" fill="#A8A193">Proyecto destacado</text>
+    <text x="24" y="84" font-size="28" font-weight="700" letter-spacing="-0.6" fill="#ECE6D9">HelpDesk Backend</text>
+    <text x="26" y="108" font-size="11" class="mono" fill="#8C8577">santiagoGal7/<tspan fill="#A8A193">help-desk-back</tspan></text>
+  </g>
+  <g class="in" style="animation-delay:.12s">
+    <text x="26" y="140" font-size="13.5" fill="#A8A193" text-anchor="start">API REST para mesa de ayuda: tickets, usuarios, roles,</text>
+  <text x="26" y="160.93" font-size="13.5" fill="#A8A193" text-anchor="start">asignaciones, alertas y reportes. Autenticación JWT con</text>
+  <text x="26" y="181.85" font-size="13.5" fill="#A8A193" text-anchor="start">refresh tokens y pruebas unitarias y de integración.</text>
+    <path d="M26 196.5 H486" stroke="#3A372F"/>
+    <text x="26" y="218" font-size="12.5" fill="#ECE6D9" text-anchor="start">.NET 10, ASP.NET Core, EF Core, PostgreSQL, MediatR,</text>
+  <text x="26" y="237.38" font-size="12.5" fill="#ECE6D9" text-anchor="start">FluentValidation, xUnit</text>
+  </g>
+  
+  <g class="in" style="animation-delay:.3s"><path d="M26.5 251 V259 M485.5 251 V259" stroke="#55503F"/><rect x="26" y="254" width="460" height="2" fill="#A8A193"/>
+  <rect x="26" y="271" width="10" height="2" fill="#A8A193"/><text x="42" y="276" font-size="11.5" fill="#A8A193">C# <tspan class="mono">100%</tspan></text></g>
+
+  <rect x="520.5" y="20.5" width="359" height="259" rx="2" fill="#ECE6D9" fill-opacity=".025" stroke="#55503F"/>
+  <circle cx="538" cy="39" r="3" fill="#6CBF8E" class="live"/>
+  <text x="550" y="43" font-size="11" class="mono" fill="#ECE6D9">requests</text>
+  <text x="866" y="43" text-anchor="end" font-size="11" class="mono" fill="#A8A193">localhost:5000</text>
+  <path d="M521 56.5 H879" stroke="#3A372F"/>
+  
+    <g>
+      <text x="536" y="81" font-size="11" font-weight="600" class="mono" fill="#A8A193">POST</text>
+      <text x="586" y="81" font-size="11" class="mono" fill="#ECE6D9">/api/auth/login</text>
+      <text x="866" y="81" text-anchor="end" font-size="11" class="mono" fill="#A8A193">200</text>
+      <g class="rowhl" style="animation-delay:0s">
+        <rect x="521" y="64" width="358" height="26" fill="#ECE6D9" fill-opacity="0.06"/>
+        <rect x="521" y="64" width="2" height="26" fill="#F2762E"/>
+        <text x="866" y="81" text-anchor="end" font-size="11" class="mono" fill="#6CBF8E">200</text>
+      </g>
+    </g>
+    <g>
+      <text x="536" y="111" font-size="11" font-weight="600" class="mono" fill="#A8A193">POST</text>
+      <text x="586" y="111" font-size="11" class="mono" fill="#ECE6D9">/api/auth/refresh</text>
+      <text x="866" y="111" text-anchor="end" font-size="11" class="mono" fill="#A8A193">200</text>
+      <g class="rowhl" style="animation-delay:0.7s">
+        <rect x="521" y="94" width="358" height="26" fill="#ECE6D9" fill-opacity="0.06"/>
+        <rect x="521" y="94" width="2" height="26" fill="#F2762E"/>
+        <text x="866" y="111" text-anchor="end" font-size="11" class="mono" fill="#6CBF8E">200</text>
+      </g>
+    </g>
+    <g>
+      <text x="536" y="141" font-size="11" font-weight="600" class="mono" fill="#A8A193">GET</text>
+      <text x="586" y="141" font-size="11" class="mono" fill="#ECE6D9">/api/agent/tickets</text>
+      <text x="866" y="141" text-anchor="end" font-size="11" class="mono" fill="#A8A193">200</text>
+      <g class="rowhl" style="animation-delay:1.4s">
+        <rect x="521" y="124" width="358" height="26" fill="#ECE6D9" fill-opacity="0.06"/>
+        <rect x="521" y="124" width="2" height="26" fill="#F2762E"/>
+        <text x="866" y="141" text-anchor="end" font-size="11" class="mono" fill="#6CBF8E">200</text>
+      </g>
+    </g>
+    <g>
+      <text x="536" y="171" font-size="11" font-weight="600" class="mono" fill="#A8A193">PATCH</text>
+      <text x="586" y="171" font-size="11" class="mono" fill="#ECE6D9">/api/agent/tickets/{id}/status</text>
+      <text x="866" y="171" text-anchor="end" font-size="11" class="mono" fill="#A8A193">200</text>
+      <g class="rowhl" style="animation-delay:2.1s">
+        <rect x="521" y="154" width="358" height="26" fill="#ECE6D9" fill-opacity="0.06"/>
+        <rect x="521" y="154" width="2" height="26" fill="#F2762E"/>
+        <text x="866" y="171" text-anchor="end" font-size="11" class="mono" fill="#6CBF8E">200</text>
+      </g>
+    </g>
+    <g>
+      <text x="536" y="201" font-size="11" font-weight="600" class="mono" fill="#A8A193">POST</text>
+      <text x="586" y="201" font-size="11" class="mono" fill="#ECE6D9">/api/agent/tickets/{id}/comments</text>
+      <text x="866" y="201" text-anchor="end" font-size="11" class="mono" fill="#A8A193">201</text>
+      <g class="rowhl" style="animation-delay:2.8s">
+        <rect x="521" y="184" width="358" height="26" fill="#ECE6D9" fill-opacity="0.06"/>
+        <rect x="521" y="184" width="2" height="26" fill="#F2762E"/>
+        <text x="866" y="201" text-anchor="end" font-size="11" class="mono" fill="#6CBF8E">201</text>
+      </g>
+    </g>
+    <g>
+      <text x="536" y="231" font-size="11" font-weight="600" class="mono" fill="#A8A193">POST</text>
+      <text x="586" y="231" font-size="11" class="mono" fill="#ECE6D9">/api/admin/reports/tickets</text>
+      <text x="866" y="231" text-anchor="end" font-size="11" class="mono" fill="#A8A193">200</text>
+      <g class="rowhl" style="animation-delay:3.5s">
+        <rect x="521" y="214" width="358" height="26" fill="#ECE6D9" fill-opacity="0.06"/>
+        <rect x="521" y="214" width="2" height="26" fill="#F2762E"/>
+        <text x="866" y="231" text-anchor="end" font-size="11" class="mono" fill="#6CBF8E">200</text>
+      </g>
+    </g>
+    <g>
+      <text x="536" y="261" font-size="11" font-weight="600" class="mono" fill="#A8A193">PATCH</text>
+      <text x="586" y="261" font-size="11" class="mono" fill="#ECE6D9">/api/admin/users/{id}/account-status</text>
+      <text x="866" y="261" text-anchor="end" font-size="11" class="mono" fill="#A8A193">200</text>
+      <g class="rowhl" style="animation-delay:4.2s">
+        <rect x="521" y="244" width="358" height="26" fill="#ECE6D9" fill-opacity="0.06"/>
+        <rect x="521" y="244" width="2" height="26" fill="#F2762E"/>
+        <text x="866" y="261" text-anchor="end" font-size="11" class="mono" fill="#6CBF8E">200</text>
+      </g>
+    </g>
+  
+</svg>

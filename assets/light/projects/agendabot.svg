@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="446" height="256" viewBox="0 0 446 256" role="img" aria-labelledby="t d">
+  <title id="t">AgendaBot</title>
+  <desc id="d">Bot de Telegram para citas, tareas, hábitos y reportes. Orquestado con n8n y con Google Sheets como base de datos. Con Kevin Pico. Tecnologías: n8n, Telegram, Google Sheets.</desc>
+  <style>
+  text { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
+  .mono { font-family: ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+  .draw { stroke-dasharray: 1; animation: draw 1.1s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes draw { from { stroke-dashoffset: 1; } }
+  .in { animation: in .7s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes in { from { opacity: 0; transform: translateY(6px); } }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; }
+  }
+</style>
+  <defs>
+  <pattern id="p-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V6" stroke="#B9B1A0" stroke-width="1"/>
+  </pattern>
+  <pattern id="p-hatch-a" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V5" stroke="#C2410C" stroke-width="1.2"/>
+  </pattern>
+  <pattern id="p-grid" width="12" height="12" patternUnits="userSpaceOnUse">
+    <path d="M12 0 H0 V12" fill="none" stroke="#DDD7CA" stroke-width="0.6"/>
+  </pattern>
+</defs>
+
+  <g transform="translate(0 0)">
+  <rect x="0.5" y="0.5" width="439" height="255" rx="2" fill="none" stroke="#B9B1A0"/>
+  <g class="in" style="animation-delay:0.12s">
+    <text x="22" y="34" font-size="11" class="mono" fill="#7A7365">P-04</text>
+    
+    <path d="M406 33 L415 24 M407 24 H415 V32" fill="none" stroke="#5F5A50" stroke-width="1" stroke-linecap="square"/>
+    <text x="22" y="66" font-size="18" font-weight="600" letter-spacing="-0.3" fill="#1E1C18">AgendaBot</text>
+    <text x="22" y="86" font-size="11" class="mono" fill="#7A7365">Proyecto_IA_Nivel1_Santiago_Gallo--Kevin_P…</text>
+    <text x="22" y="116" font-size="13" fill="#5F5A50" text-anchor="start">Bot de Telegram para citas, tareas, hábitos y</text>
+  <text x="22" y="135.5" font-size="13" fill="#5F5A50" text-anchor="start">reportes. Orquestado con n8n y con Google Sheets como</text>
+  <text x="22" y="155" font-size="13" fill="#5F5A50" text-anchor="start">base de datos. Con Kevin Pico.</text>
+    <text x="22" y="190" font-size="12.5" fill="#1E1C18">n8n, Telegram, Google Sheets</text>
+  </g>
+  
+  <g class="in" style="animation-delay:.3s"><path d="M22.5 211 V219 M417.5 211 V219" stroke="#B9B1A0"/><rect x="22" y="214" width="396" height="2" fill="#5F5A50"/>
+  <rect x="22" y="231" width="10" height="2" fill="#5F5A50"/><text x="38" y="236" font-size="11.5" fill="#5F5A50">workflow n8n</text></g>
+  </g>
+  
+</svg>
