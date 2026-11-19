@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="340" viewBox="0 0 900 340" role="img" aria-labelledby="t d">
+  <title id="t">Santiago Gallo — Backend Developer en Colombia</title>
+  <desc id="d">Construyo APIs y backends que resuelven problemas reales. Stack: .NET, Python, JavaScript, PostgreSQL y agentes de IA.</desc>
+  <style>
+  text { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Inter, 'Helvetica Neue', Arial, sans-serif; }
+  .mono { font-family: 'JetBrains Mono', 'Cascadia Code', 'SF Mono', ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; }
+  }
+
+    
+  .blink { animation: blink 1.05s steps(1, end) infinite; }
+  @keyframes blink { 0%, 55% { opacity: 1; } 56%, 100% { opacity: 0; } }
+
+    .star { animation: twinkle 4s ease-in-out infinite; }
+    @keyframes twinkle { 0%,100% { opacity: .15; } 50% { opacity: .9; } }
+    .blob { animation: drift 18s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
+    .b2 { animation-duration: 22s; animation-delay: -6s; }
+    .b3 { animation-duration: 26s; animation-delay: -12s; }
+    @keyframes drift {
+      0% { transform: translate(0,0) scale(1); }
+      50% { transform: translate(60px,25px) scale(1.15); }
+      100% { transform: translate(-40px,-20px) scale(.92); }
+    }
+    .pulse { animation: pulse 2s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes pulse { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(3.2); opacity: 0; } }
+    .rise { animation: rise .9s cubic-bezier(.2,.8,.2,1) both; }
+    .d1 { animation-delay: .15s; } .d2 { animation-delay: .35s; } .d3 { animation-delay: .55s; } .d4 { animation-delay: .75s; }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    .scan { animation: scan 6s ease-in-out infinite; }
+    @keyframes scan { 0% { transform: translateX(-320px); } 100% { transform: translateX(940px); } }
+    .core { animation: breathe 4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    @keyframes breathe { 0%,100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.08); } }
+  </style>
+  <defs>
+  <linearGradient id="g-bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#050816"/>
+    <stop offset="1" stop-color="#0A1128"/>
+  </linearGradient>
+  <linearGradient id="g-panel" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#111B38"/>
+    <stop offset="1" stop-color="#0C142B"/>
+  </linearGradient>
+  <linearGradient id="g-brand" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#58A6FF"/>
+    <stop offset="0.5" stop-color="#22D3EE"/>
+    <stop offset="1" stop-color="#A78BFA"/>
+  </linearGradient>
+  <linearGradient id="g-stroke" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#58A6FF" stop-opacity="0.55"/>
+    <stop offset="0.5" stop-color="#1D2A4D" stop-opacity="0.9"/>
+    <stop offset="1" stop-color="#A78BFA" stop-opacity="0.55"/>
+  </linearGradient>
+  <filter id="f-glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="f-soft" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="8"/>
+  </filter>
+
+    <clipPath id="frame"><rect width="900" height="340" rx="26"/></clipPath>
+    <filter id="blur-xl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="46"/></filter>
+    <radialGradient id="dot-fade" cx="0.3" cy="0.45" r="0.8">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="dot-mask"><rect width="900" height="340" fill="url(#dot-fade)"/></mask>
+    <linearGradient id="name-g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="520" y2="0" spreadMethod="reflect">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.35" stop-color="#58A6FF"/>
+      <stop offset="0.7" stop-color="#A78BFA"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="1040 0" dur="9s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="scan-g" x1="0" x2="1">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#22D3EE" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="arc-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="core-g">
+      <stop offset="0" stop-color="#1C7ED6" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#1C7ED6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="term-g" x1="0" x2="1">
+      <stop offset="0" stop-color="#111B38" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#111B38" stop-opacity="0.35"/>
+    </linearGradient>
+    
+  <mask id="hero-tw-m0" maskUnits="userSpaceOnUse">
+    <rect x="82" y="228.4" height="25.6" width="0" fill="#fff">
+      <animate attributeName="width" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;9.6;19.2;28.8;38.4;48;57.6;67.2;76.8;86.4;96;105.6;115.2;124.8;134.4;144;153.6;163.2;172.8;182.4;192;201.6;211.2;220.8;230.4;240;249.6;240;230.4;220.8;211.2;201.6;192;182.4;172.8;163.2;153.6;144;134.4;124.8;115.2;105.6;96;86.4;76.8;67.2;57.6;48;38.4;28.8;19.2;9.6;0" keyTimes="0.00000;0.01100;0.01450;0.01800;0.02150;0.02500;0.02850;0.03200;0.03550;0.03900;0.04250;0.04600;0.04950;0.05300;0.05650;0.06000;0.06350;0.06700;0.07050;0.07400;0.07750;0.08100;0.08450;0.08800;0.09150;0.09500;0.09850;0.18975;0.19100;0.19225;0.19350;0.19475;0.19600;0.19725;0.19850;0.19975;0.20100;0.20225;0.20350;0.20475;0.20600;0.20725;0.20850;0.20975;0.21100;0.21225;0.21350;0.21475;0.21600;0.21725;0.21850;0.21975;0.22100"/>
+    </rect>
+  </mask>
+  <mask id="hero-tw-m1" maskUnits="userSpaceOnUse">
+    <rect x="82" y="228.4" height="25.6" width="0" fill="#fff">
+      <animate attributeName="width" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;9.6;19.2;28.8;38.4;48;57.6;67.2;76.8;86.4;96;105.6;115.2;124.8;134.4;144;153.6;163.2;172.8;182.4;192;201.6;211.2;220.8;230.4;240;249.6;259.2;268.8;278.4;288;278.4;268.8;259.2;249.6;240;230.4;220.8;211.2;201.6;192;182.4;172.8;163.2;153.6;144;134.4;124.8;115.2;105.6;96;86.4;76.8;67.2;57.6;48;38.4;28.8;19.2;9.6;0" keyTimes="0.00000;0.26100;0.26450;0.26800;0.27150;0.27500;0.27850;0.28200;0.28550;0.28900;0.29250;0.29600;0.29950;0.30300;0.30650;0.31000;0.31350;0.31700;0.32050;0.32400;0.32750;0.33100;0.33450;0.33800;0.34150;0.34500;0.34850;0.35200;0.35550;0.35900;0.36250;0.45375;0.45500;0.45625;0.45750;0.45875;0.46000;0.46125;0.46250;0.46375;0.46500;0.46625;0.46750;0.46875;0.47000;0.47125;0.47250;0.47375;0.47500;0.47625;0.47750;0.47875;0.48000;0.48125;0.48250;0.48375;0.48500;0.48625;0.48750;0.48875;0.49000"/>
+    </rect>
+  </mask>
+  <mask id="hero-tw-m2" maskUnits="userSpaceOnUse">
+    <rect x="82" y="228.4" height="25.6" width="0" fill="#fff">
+      <animate attributeName="width" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;9.6;19.2;28.8;38.4;48;57.6;67.2;76.8;86.4;96;105.6;115.2;124.8;134.4;144;153.6;163.2;172.8;182.4;192;201.6;211.2;220.8;230.4;240;249.6;259.2;268.8;278.4;288;297.6;307.2;316.8;307.2;297.6;288;278.4;268.8;259.2;249.6;240;230.4;220.8;211.2;201.6;192;182.4;172.8;163.2;153.6;144;134.4;124.8;115.2;105.6;96;86.4;76.8;67.2;57.6;48;38.4;28.8;19.2;9.6;0" keyTimes="0.00000;0.51100;0.51450;0.51800;0.52150;0.52500;0.52850;0.53200;0.53550;0.53900;0.54250;0.54600;0.54950;0.55300;0.55650;0.56000;0.56350;0.56700;0.57050;0.57400;0.57750;0.58100;0.58450;0.58800;0.59150;0.59500;0.59850;0.60200;0.60550;0.60900;0.61250;0.61600;0.61950;0.62300;0.71425;0.71550;0.71675;0.71800;0.71925;0.72050;0.72175;0.72300;0.72425;0.72550;0.72675;0.72800;0.72925;0.73050;0.73175;0.73300;0.73425;0.73550;0.73675;0.73800;0.73925;0.74050;0.74175;0.74300;0.74425;0.74550;0.74675;0.74800;0.74925;0.75050;0.75175;0.75300;0.75425"/>
+    </rect>
+  </mask>
+  <mask id="hero-tw-m3" maskUnits="userSpaceOnUse">
+    <rect x="82" y="228.4" height="25.6" width="0" fill="#fff">
+      <animate attributeName="width" dur="20s" repeatCount="indefinite" calcMode="discrete" values="0;9.6;19.2;28.8;38.4;48;57.6;67.2;76.8;86.4;96;105.6;115.2;124.8;134.4;144;153.6;163.2;172.8;182.4;192;201.6;211.2;220.8;211.2;201.6;192;182.4;172.8;163.2;153.6;144;134.4;124.8;115.2;105.6;96;86.4;76.8;67.2;57.6;48;38.4;28.8;19.2;9.6;0" keyTimes="0.00000;0.76100;0.76450;0.76800;0.77150;0.77500;0.77850;0.78200;0.78550;0.78900;0.79250;0.79600;0.79950;0.80300;0.80650;0.81000;0.81350;0.81700;0.82050;0.82400;0.82750;0.83100;0.83450;0.83800;0.92925;0.93050;0.93175;0.93300;0.93425;0.93550;0.93675;0.93800;0.93925;0.94050;0.94175;0.94300;0.94425;0.94550;0.94675;0.94800;0.94925;0.95050;0.95175;0.95300;0.95425;0.95550;0.95675"/>
+    </rect>
+  </mask>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="900" height="340" fill="url(#g-bg)"/>
+    <g filter="url(#blur-xl)">
+      <circle class="blob" cx="140" cy="70" r="130" fill="#1C7ED6" opacity="0.55"/>
+      <circle class="blob b2" cx="760" cy="90" r="150" fill="#8B5CF6" opacity="0.38"/>
+      <circle class="blob b3" cx="470" cy="330" r="140" fill="#22D3EE" opacity="0.22"/>
+    </g>
+    <path d="M20 20h.01M20 44h.01M20 68h.01M20 92h.01M20 116h.01M20 140h.01M20 164h.01M20 188h.01M20 212h.01M20 236h.01M20 260h.01M20 284h.01M20 308h.01M20 332h.01M44 20h.01M44 44h.01M44 68h.01M44 92h.01M44 116h.01M44 140h.01M44 164h.01M44 188h.01M44 212h.01M44 236h.01M44 260h.01M44 284h.01M44 308h.01M44 332h.01M68 20h.01M68 44h.01M68 68h.01M68 92h.01M68 116h.01M68 140h.01M68 164h.01M68 188h.01M68 212h.01M68 236h.01M68 260h.01M68 284h.01M68 308h.01M68 332h.01M92 20h.01M92 44h.01M92 68h.01M92 92h.01M92 116h.01M92 140h.01M92 164h.01M92 188h.01M92 212h.01M92 236h.01M92 260h.01M92 284h.01M92 308h.01M92 332h.01M116 20h.01M116 44h.01M116 68h.01M116 92h.01M116 116h.01M116 140h.01M116 164h.01M116 188h.01M116 212h.01M116 236h.01M116 260h.01M116 284h.01M116 308h.01M116 332h.01M140 20h.01M140 44h.01M140 68h.01M140 92h.01M140 116h.01M140 140h.01M140 164h.01M140 188h.01M140 212h.01M140 236h.01M140 260h.01M140 284h.01M140 308h.01M140 332h.01M164 20h.01M164 44h.01M164 68h.01M164 92h.01M164 116h.01M164 140h.01M164 164h.01M164 188h.01M164 212h.01M164 236h.01M164 260h.01M164 284h.01M164 308h.01M164 332h.01M188 20h.01M188 44h.01M188 68h.01M188 92h.01M188 116h.01M188 140h.01M188 164h.01M188 188h.01M188 212h.01M188 236h.01M188 260h.01M188 284h.01M188 308h.01M188 332h.01M212 20h.01M212 44h.01M212 68h.01M212 92h.01M212 116h.01M212 140h.01M212 164h.01M212 188h.01M212 212h.01M212 236h.01M212 260h.01M212 284h.01M212 308h.01M212 332h.01M236 20h.01M236 44h.01M236 68h.01M236 92h.01M236 116h.01M236 140h.01M236 164h.01M236 188h.01M236 212h.01M236 236h.01M236 260h.01M236 284h.01M236 308h.01M236 332h.01M260 20h.01M260 44h.01M260 68h.01M260 92h.01M260 116h.01M260 140h.01M260 164h.01M260 188h.01M260 212h.01M260 236h.01M260 260h.01M260 284h.01M260 308h.01M260 332h.01M284 20h.01M284 44h.01M284 68h.01M284 92h.01M284 116h.01M284 140h.01M284 164h.01M284 188h.01M284 212h.01M284 236h.01M284 260h.01M284 284h.01M284 308h.01M284 332h.01M308 20h.01M308 44h.01M308 68h.01M308 92h.01M308 116h.01M308 140h.01M308 164h.01M308 188h.01M308 212h.01M308 236h.01M308 260h.01M308 284h.01M308 308h.01M308 332h.01M332 20h.01M332 44h.01M332 68h.01M332 92h.01M332 116h.01M332 140h.01M332 164h.01M332 188h.01M332 212h.01M332 236h.01M332 260h.01M332 284h.01M332 308h.01M332 332h.01M356 20h.01M356 44h.01M356 68h.01M356 92h.01M356 116h.01M356 140h.01M356 164h.01M356 188h.01M356 212h.01M356 236h.01M356 260h.01M356 284h.01M356 308h.01M356 332h.01M380 20h.01M380 44h.01M380 68h.01M380 92h.01M380 116h.01M380 140h.01M380 164h.01M380 188h.01M380 212h.01M380 236h.01M380 260h.01M380 284h.01M380 308h.01M380 332h.01M404 20h.01M404 44h.01M404 68h.01M404 92h.01M404 116h.01M404 140h.01M404 164h.01M404 188h.01M404 212h.01M404 236h.01M404 260h.01M404 284h.01M404 308h.01M404 332h.01M428 20h.01M428 44h.01M428 68h.01M428 92h.01M428 116h.01M428 140h.01M428 164h.01M428 188h.01M428 212h.01M428 236h.01M428 260h.01M428 284h.01M428 308h.01M428 332h.01M452 20h.01M452 44h.01M452 68h.01M452 92h.01M452 116h.01M452 140h.01M452 164h.01M452 188h.01M452 212h.01M452 236h.01M452 260h.01M452 284h.01M452 308h.01M452 332h.01M476 20h.01M476 44h.01M476 68h.01M476 92h.01M476 116h.01M476 140h.01M476 164h.01M476 188h.01M476 212h.01M476 236h.01M476 260h.01M476 284h.01M476 308h.01M476 332h.01M500 20h.01M500 44h.01M500 68h.01M500 92h.01M500 116h.01M500 140h.01M500 164h.01M500 188h.01M500 212h.01M500 236h.01M500 260h.01M500 284h.01M500 308h.01M500 332h.01M524 20h.01M524 44h.01M524 68h.01M524 92h.01M524 116h.01M524 140h.01M524 164h.01M524 188h.01M524 212h.01M524 236h.01M524 260h.01M524 284h.01M524 308h.01M524 332h.01M548 20h.01M548 44h.01M548 68h.01M548 92h.01M548 116h.01M548 140h.01M548 164h.01M548 188h.01M548 212h.01M548 236h.01M548 260h.01M548 284h.01M548 308h.01M548 332h.01M572 20h.01M572 44h.01M572 68h.01M572 92h.01M572 116h.01M572 140h.01M572 164h.01M572 188h.01M572 212h.01M572 236h.01M572 260h.01M572 284h.01M572 308h.01M572 332h.01M596 20h.01M596 44h.01M596 68h.01M596 92h.01M596 116h.01M596 140h.01M596 164h.01M596 188h.01M596 212h.01M596 236h.01M596 260h.01M596 284h.01M596 308h.01M596 332h.01M620 20h.01M620 44h.01M620 68h.01M620 92h.01M620 116h.01M620 140h.01M620 164h.01M620 188h.01M620 212h.01M620 236h.01M620 260h.01M620 284h.01M620 308h.01M620 332h.01M644 20h.01M644 44h.01M644 68h.01M644 92h.01M644 116h.01M644 140h.01M644 164h.01M644 188h.01M644 212h.01M644 236h.01M644 260h.01M644 284h.01M644 308h.01M644 332h.01M668 20h.01M668 44h.01M668 68h.01M668 92h.01M668 116h.01M668 140h.01M668 164h.01M668 188h.01M668 212h.01M668 236h.01M668 260h.01M668 284h.01M668 308h.01M668 332h.01M692 20h.01M692 44h.01M692 68h.01M692 92h.01M692 116h.01M692 140h.01M692 164h.01M692 188h.01M692 212h.01M692 236h.01M692 260h.01M692 284h.01M692 308h.01M692 332h.01M716 20h.01M716 44h.01M716 68h.01M716 92h.01M716 116h.01M716 140h.01M716 164h.01M716 188h.01M716 212h.01M716 236h.01M716 260h.01M716 284h.01M716 308h.01M716 332h.01M740 20h.01M740 44h.01M740 68h.01M740 92h.01M740 116h.01M740 140h.01M740 164h.01M740 188h.01M740 212h.01M740 236h.01M740 260h.01M740 284h.01M740 308h.01M740 332h.01M764 20h.01M764 44h.01M764 68h.01M764 92h.01M764 116h.01M764 140h.01M764 164h.01M764 188h.01M764 212h.01M764 236h.01M764 260h.01M764 284h.01M764 308h.01M764 332h.01M788 20h.01M788 44h.01M788 68h.01M788 92h.01M788 116h.01M788 140h.01M788 164h.01M788 188h.01M788 212h.01M788 236h.01M788 260h.01M788 284h.01M788 308h.01M788 332h.01M812 20h.01M812 44h.01M812 68h.01M812 92h.01M812 116h.01M812 140h.01M812 164h.01M812 188h.01M812 212h.01M812 236h.01M812 260h.01M812 284h.01M812 308h.01M812 332h.01M836 20h.01M836 44h.01M836 68h.01M836 92h.01M836 116h.01M836 140h.01M836 164h.01M836 188h.01M836 212h.01M836 236h.01M836 260h.01M836 284h.01M836 308h.01M836 332h.01M860 20h.01M860 44h.01M860 68h.01M860 92h.01M860 116h.01M860 140h.01M860 164h.01M860 188h.01M860 212h.01M860 236h.01M860 260h.01M860 284h.01M860 308h.01M860 332h.01M884 20h.01M884 44h.01M884 68h.01M884 92h.01M884 116h.01M884 140h.01M884 164h.01M884 188h.01M884 212h.01M884 236h.01M884 260h.01M884 284h.01M884 308h.01M884 332h.01" stroke="#58A6FF" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round" mask="url(#dot-mask)"/>
+    <circle cx="227.11" cy="29.96" r="1.04" fill="#fff" class="star" style="animation-duration:4s;animation-delay:-1.34s"/><circle cx="23.1" cy="152.08" r="0.53" fill="#fff" class="star" style="animation-duration:6.48s;animation-delay:-5.24s"/><circle cx="767.88" cy="169.89" r="1.11" fill="#fff" class="star" style="animation-duration:4.89s;animation-delay:-5.17s"/><circle cx="81.68" cy="47.67" r="1.45" fill="#fff" class="star" style="animation-duration:6.06s;animation-delay:-5.55s"/><circle cx="495.46" cy="61.38" r="1.01" fill="#fff" class="star" style="animation-duration:6.27s;animation-delay:-1.55s"/><circle cx="739.35" cy="52.8" r="1.31" fill="#fff" class="star" style="animation-duration:2.74s;animation-delay:-2.8s"/><circle cx="20.21" cy="182.68" r="1.31" fill="#fff" class="star" style="animation-duration:5.22s;animation-delay:-5.07s"/><circle cx="342.68" cy="199.12" r="1.17" fill="#fff" class="star" style="animation-duration:5.37s;animation-delay:-4.27s"/><circle cx="891.26" cy="152.92" r="0.51" fill="#fff" class="star" style="animation-duration:4.29s;animation-delay:-1.15s"/><circle cx="114.3" cy="261.38" r="1.05" fill="#fff" class="star" style="animation-duration:4.06s;animation-delay:-4.83s"/><circle cx="194.19" cy="92.5" r="0.42" fill="#fff" class="star" style="animation-duration:3.84s;animation-delay:-1.67s"/><circle cx="794.58" cy="325" r="0.61" fill="#fff" class="star" style="animation-duration:4.83s;animation-delay:-5.23s"/><circle cx="303.01" cy="106.87" r="0.54" fill="#fff" class="star" style="animation-duration:2.91s;animation-delay:-5.88s"/><circle cx="829.36" cy="273.95" r="0.88" fill="#fff" class="star" style="animation-duration:3.73s;animation-delay:-4.26s"/><circle cx="106.73" cy="173.14" r="0.53" fill="#fff" class="star" style="animation-duration:4.92s;animation-delay:-1.46s"/><circle cx="628.04" cy="166.83" r="0.63" fill="#fff" class="star" style="animation-duration:5.28s;animation-delay:-1.36s"/><circle cx="793.64" cy="277.77" r="1.17" fill="#fff" class="star" style="animation-duration:4.11s;animation-delay:-5.04s"/><circle cx="137.84" cy="42.94" r="0.99" fill="#fff" class="star" style="animation-duration:6.45s;animation-delay:-3.91s"/><circle cx="383.37" cy="253.99" r="0.87" fill="#fff" class="star" style="animation-duration:2.81s;animation-delay:-0.27s"/><circle cx="743.15" cy="332.77" r="1.28" fill="#fff" class="star" style="animation-duration:4.05s;animation-delay:-1.01s"/><circle cx="254.86" cy="166.56" r="1.33" fill="#fff" class="star" style="animation-duration:3.29s;animation-delay:-5.48s"/><circle cx="284.43" cy="180.21" r="0.69" fill="#fff" class="star" style="animation-duration:2.55s;animation-delay:-2.42s"/><circle cx="583.18" cy="124.67" r="0.92" fill="#fff" class="star" style="animation-duration:4.87s;animation-delay:-1.53s"/><circle cx="630.66" cy="187.95" r="1.06" fill="#fff" class="star" style="animation-duration:4.02s;animation-delay:-1.39s"/><circle cx="376.49" cy="318.24" r="0.66" fill="#fff" class="star" style="animation-duration:6.3s;animation-delay:-5.52s"/><circle cx="514.22" cy="314.45" r="0.43" fill="#fff" class="star" style="animation-duration:4.66s;animation-delay:-1.53s"/><circle cx="451.99" cy="323.76" r="1.48" fill="#fff" class="star" style="animation-duration:5.76s;animation-delay:-4.25s"/><circle cx="277.93" cy="191.77" r="1.15" fill="#fff" class="star" style="animation-duration:3.86s;animation-delay:-0.3s"/><circle cx="413.56" cy="260.56" r="1.47" fill="#fff" class="star" style="animation-duration:4.8s;animation-delay:-0.23s"/><circle cx="272.91" cy="219.33" r="1.13" fill="#fff" class="star" style="animation-duration:3.52s;animation-delay:-2.81s"/><circle cx="649" cy="172.06" r="0.44" fill="#fff" class="star" style="animation-duration:5.43s;animation-delay:-5.07s"/><circle cx="813.7" cy="251.13" r="0.99" fill="#fff" class="star" style="animation-duration:6.43s;animation-delay:-5.98s"/><circle cx="558.91" cy="266.85" r="0.46" fill="#fff" class="star" style="animation-duration:4.96s;animation-delay:-3.26s"/><circle cx="224.57" cy="254.06" r="0.43" fill="#fff" class="star" style="animation-duration:4.29s;animation-delay:-5.64s"/><circle cx="317.38" cy="195.6" r="1.03" fill="#fff" class="star" style="animation-duration:4.13s;animation-delay:-0.18s"/><circle cx="530.62" cy="23.65" r="0.55" fill="#fff" class="star" style="animation-duration:3.53s;animation-delay:-0.65s"/><circle cx="254.21" cy="190.59" r="0.87" fill="#fff" class="star" style="animation-duration:5.17s;animation-delay:-5.85s"/><circle cx="538.76" cy="122.87" r="1.17" fill="#fff" class="star" style="animation-duration:6.16s;animation-delay:-1.68s"/><circle cx="793.93" cy="188.74" r="1.12" fill="#fff" class="star" style="animation-duration:4.86s;animation-delay:-4.49s"/><circle cx="249.74" cy="50.03" r="0.66" fill="#fff" class="star" style="animation-duration:3.87s;animation-delay:-0.62s"/><circle cx="397.2" cy="264.64" r="1.11" fill="#fff" class="star" style="animation-duration:3.67s;animation-delay:-4.96s"/><circle cx="623.34" cy="144.94" r="0.79" fill="#fff" class="star" style="animation-duration:4.59s;animation-delay:-4.38s"/><circle cx="678.27" cy="232.72" r="0.7" fill="#fff" class="star" style="animation-duration:6.34s;animation-delay:-4.82s"/><circle cx="715.9" cy="299.52" r="0.58" fill="#fff" class="star" style="animation-duration:4.57s;animation-delay:-3.53s"/><circle cx="627.86" cy="2.89" r="0.88" fill="#fff" class="star" style="animation-duration:5.81s;animation-delay:-0.31s"/><circle cx="204.79" cy="131.43" r="1.47" fill="#fff" class="star" style="animation-duration:4.92s;animation-delay:-4.02s"/>
+
+    <!-- Emblema -->
+    <circle cx="735" cy="170" r="96" fill="url(#core-g)" class="core"/>
+    <circle cx="735" cy="170" r="118" fill="none" stroke="#58A6FF" stroke-opacity="0.25" stroke-dasharray="2 7">
+      <animateTransform attributeName="transform" type="rotate" from="0 735 170" to="360 735 170" dur="90s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="735" cy="170" r="84" fill="none" stroke="#1D2A4D" stroke-width="1.5"/>
+    <circle cx="735" cy="170" r="84" fill="none" stroke="url(#arc-g)" stroke-width="3" stroke-linecap="round" stroke-dasharray="130 400">
+      <animateTransform attributeName="transform" type="rotate" from="0 735 170" to="360 735 170" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="735" cy="170" r="64" fill="none" stroke="#A78BFA" stroke-opacity="0.5" stroke-dasharray="60 20 10 20">
+      <animateTransform attributeName="transform" type="rotate" from="360 735 170" to="0 735 170" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="735" cy="170" r="50" fill="#050816" stroke="url(#g-brand)" stroke-width="2"/>
+    <text x="735" y="184" text-anchor="middle" font-size="40" font-weight="800" fill="url(#g-brand)" class="mono" letter-spacing="-2">SG</text>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0 735 170" to="360 735 170" dur="48s" repeatCount="indefinite"/>
+      
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 735 52" to="-360 735 52" dur="48s" repeatCount="indefinite"/>
+        <rect x="709" y="40" width="52" height="24" rx="12" fill="#0A1128" stroke="#58A6FF" stroke-opacity="0.55"/>
+        <text x="735" y="56.5" text-anchor="middle" font-size="12" class="mono" fill="#E6EDF3">.NET</text>
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 837.19 111" to="-360 837.19 111" dur="48s" repeatCount="indefinite"/>
+        <rect x="819.19" y="99" width="36" height="24" rx="12" fill="#0A1128" stroke="#58A6FF" stroke-opacity="0.55"/>
+        <text x="837.19" y="115.5" text-anchor="middle" font-size="12" class="mono" fill="#E6EDF3">C#</text>
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 837.19 229" to="-360 837.19 229" dur="48s" repeatCount="indefinite"/>
+        <rect x="803.19" y="217" width="68" height="24" rx="12" fill="#0A1128" stroke="#58A6FF" stroke-opacity="0.55"/>
+        <text x="837.19" y="233.5" text-anchor="middle" font-size="12" class="mono" fill="#E6EDF3">Python</text>
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 735 288" to="-360 735 288" dur="48s" repeatCount="indefinite"/>
+        <rect x="713" y="276" width="44" height="24" rx="12" fill="#0A1128" stroke="#58A6FF" stroke-opacity="0.55"/>
+        <text x="735" y="292.5" text-anchor="middle" font-size="12" class="mono" fill="#E6EDF3">SQL</text>
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 632.81 229" to="-360 632.81 229" dur="48s" repeatCount="indefinite"/>
+        <rect x="610.81" y="217" width="44" height="24" rx="12" fill="#0A1128" stroke="#58A6FF" stroke-opacity="0.55"/>
+        <text x="632.81" y="233.5" text-anchor="middle" font-size="12" class="mono" fill="#E6EDF3">n8n</text>
+      </g>
+      <g>
+        <animateTransform attributeName="transform" type="rotate" from="0 632.81 111" to="-360 632.81 111" dur="48s" repeatCount="indefinite"/>
+        <rect x="614.81" y="99" width="36" height="24" rx="12" fill="#0A1128" stroke="#58A6FF" stroke-opacity="0.55"/>
+        <text x="632.81" y="115.5" text-anchor="middle" font-size="12" class="mono" fill="#E6EDF3">IA</text>
+      </g>
+    </g>
+
+    <!-- Texto -->
+    <g class="rise">
+      <rect x="56" y="54" width="240" height="28" rx="14" fill="#3FB950" fill-opacity="0.1" stroke="#3FB950" stroke-opacity="0.45"/>
+      <circle cx="74" cy="68" r="4" fill="#3FB950"/>
+      <circle cx="74" cy="68" r="4" fill="#3FB950" class="pulse"/>
+      <text x="88" y="72.5" font-size="12" class="mono" fill="#3FB950" letter-spacing="1.5">BACKEND DEVELOPER · CO</text>
+    </g>
+    <text x="54" y="146" font-size="60" font-weight="800" fill="url(#name-g)" letter-spacing="-1.5" class="rise d1">Santiago Gallo</text>
+    <text x="56" y="186" font-size="18" fill="#A3B0C6" class="rise d2">Construyo APIs y backends que resuelven problemas reales.</text>
+
+    <g class="rise d3">
+      <rect x="56" y="218" width="470" height="42" rx="12" fill="url(#term-g)" stroke="#1D2A4D"/>
+      <text x="68" y="246" font-size="16" class="mono" fill="#3FB950">$</text>
+      
+  <text x="82" y="246" font-size="16" class="mono" fill="#E6EDF3" textLength="249.6" lengthAdjust="spacingAndGlyphs" mask="url(#hero-tw-m0)">dotnet new webapi -n Nodux</text>
+  <text x="82" y="246" font-size="16" class="mono" fill="#E6EDF3" textLength="288" lengthAdjust="spacingAndGlyphs" mask="url(#hero-tw-m1)">python agent.py --model gemini</text>
+  <text x="82" y="246" font-size="16" class="mono" fill="#E6EDF3" textLength="316.8" lengthAdjust="spacingAndGlyphs" mask="url(#hero-tw-m2)">n8n execute --workflow agenda-bot</text>
+  <text x="82" y="246" font-size="16" class="mono" fill="#E6EDF3" textLength="220.8" lengthAdjust="spacingAndGlyphs" mask="url(#hero-tw-m3)">git commit -m &quot;ship it&quot;</text>
+  <rect x="83" y="232.4" width="8.8" height="16.8" fill="#22D3EE" class="blink">
+    <animate attributeName="x" dur="20s" repeatCount="indefinite" calcMode="discrete" values="83;92.6;102.2;111.8;121.4;131;140.6;150.2;159.8;169.4;179;188.6;198.2;207.8;217.4;227;236.6;246.2;255.8;265.4;275;284.6;294.2;303.8;313.4;323;332.6;323;313.4;303.8;294.2;284.6;275;265.4;255.8;246.2;236.6;227;217.4;207.8;198.2;188.6;179;169.4;159.8;150.2;140.6;131;121.4;111.8;102.2;92.6;83;92.6;102.2;111.8;121.4;131;140.6;150.2;159.8;169.4;179;188.6;198.2;207.8;217.4;227;236.6;246.2;255.8;265.4;275;284.6;294.2;303.8;313.4;323;332.6;342.2;351.8;361.4;371;361.4;351.8;342.2;332.6;323;313.4;303.8;294.2;284.6;275;265.4;255.8;246.2;236.6;227;217.4;207.8;198.2;188.6;179;169.4;159.8;150.2;140.6;131;121.4;111.8;102.2;92.6;83;92.6;102.2;111.8;121.4;131;140.6;150.2;159.8;169.4;179;188.6;198.2;207.8;217.4;227;236.6;246.2;255.8;265.4;275;284.6;294.2;303.8;313.4;323;332.6;342.2;351.8;361.4;371;380.6;390.2;399.8;390.2;380.6;371;361.4;351.8;342.2;332.6;323;313.4;303.8;294.2;284.6;275;265.4;255.8;246.2;236.6;227;217.4;207.8;198.2;188.6;179;169.4;159.8;150.2;140.6;131;121.4;111.8;102.2;92.6;83;92.6;102.2;111.8;121.4;131;140.6;150.2;159.8;169.4;179;188.6;198.2;207.8;217.4;227;236.6;246.2;255.8;265.4;275;284.6;294.2;303.8;294.2;284.6;275;265.4;255.8;246.2;236.6;227;217.4;207.8;198.2;188.6;179;169.4;159.8;150.2;140.6;131;121.4;111.8;102.2;92.6;83" keyTimes="0.00000;0.01100;0.01450;0.01800;0.02150;0.02500;0.02850;0.03200;0.03550;0.03900;0.04250;0.04600;0.04950;0.05300;0.05650;0.06000;0.06350;0.06700;0.07050;0.07400;0.07750;0.08100;0.08450;0.08800;0.09150;0.09500;0.09850;0.18975;0.19100;0.19225;0.19350;0.19475;0.19600;0.19725;0.19850;0.19975;0.20100;0.20225;0.20350;0.20475;0.20600;0.20725;0.20850;0.20975;0.21100;0.21225;0.21350;0.21475;0.21600;0.21725;0.21850;0.21975;0.22100;0.26100;0.26450;0.26800;0.27150;0.27500;0.27850;0.28200;0.28550;0.28900;0.29250;0.29600;0.29950;0.30300;0.30650;0.31000;0.31350;0.31700;0.32050;0.32400;0.32750;0.33100;0.33450;0.33800;0.34150;0.34500;0.34850;0.35200;0.35550;0.35900;0.36250;0.45375;0.45500;0.45625;0.45750;0.45875;0.46000;0.46125;0.46250;0.46375;0.46500;0.46625;0.46750;0.46875;0.47000;0.47125;0.47250;0.47375;0.47500;0.47625;0.47750;0.47875;0.48000;0.48125;0.48250;0.48375;0.48500;0.48625;0.48750;0.48875;0.49000;0.51100;0.51450;0.51800;0.52150;0.52500;0.52850;0.53200;0.53550;0.53900;0.54250;0.54600;0.54950;0.55300;0.55650;0.56000;0.56350;0.56700;0.57050;0.57400;0.57750;0.58100;0.58450;0.58800;0.59150;0.59500;0.59850;0.60200;0.60550;0.60900;0.61250;0.61600;0.61950;0.62300;0.71425;0.71550;0.71675;0.71800;0.71925;0.72050;0.72175;0.72300;0.72425;0.72550;0.72675;0.72800;0.72925;0.73050;0.73175;0.73300;0.73425;0.73550;0.73675;0.73800;0.73925;0.74050;0.74175;0.74300;0.74425;0.74550;0.74675;0.74800;0.74925;0.75050;0.75175;0.75300;0.75425;0.76100;0.76450;0.76800;0.77150;0.77500;0.77850;0.78200;0.78550;0.78900;0.79250;0.79600;0.79950;0.80300;0.80650;0.81000;0.81350;0.81700;0.82050;0.82400;0.82750;0.83100;0.83450;0.83800;0.92925;0.93050;0.93175;0.93300;0.93425;0.93550;0.93675;0.93800;0.93925;0.94050;0.94175;0.94300;0.94425;0.94550;0.94675;0.94800;0.94925;0.95050;0.95175;0.95300;0.95425;0.95550;0.95675"/>
+  </rect>
+    </g>
+
+    <g class="rise d4">
+      <text x="56" y="294" font-size="12.5" fill="#5F6C88" class="mono">
+        <tspan fill="#A78BFA">.NET</tspan> · <tspan fill="#22D3EE">Python</tspan> · <tspan fill="#FBBF24">JavaScript</tspan> · <tspan fill="#58A6FF">PostgreSQL</tspan> · <tspan fill="#F472B6">Agentes de IA</tspan>
+      </text>
+    </g>
+
+    <!-- Barrido de luz inferior -->
+    <rect x="0" y="338" width="900" height="2" fill="#1D2A4D"/>
+    <rect x="0" y="338" width="300" height="2" fill="url(#scan-g)" class="scan"/>
+  </g>
+  <rect x="0.5" y="0.5" width="899" height="339" rx="26" fill="none" stroke="url(#g-stroke)"/>
+  
+</svg>

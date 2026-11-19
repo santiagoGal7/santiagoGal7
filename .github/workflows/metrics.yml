@@ -1,0 +1,46 @@
+name: Generate profile metrics
+
+on:
+  schedule:
+    - cron: "30 5 * * *" # 00:30 en Colombia
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/**"
+      - ".github/workflows/metrics.yml"
+
+concurrency:
+  group: metrics
+  cancel-in-progress: true
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      # METRICS_TOKEN (opcional): PAT con scope read:user para incluir
+      # contribuciones privadas. Sin él se usan solo datos públicos.
+      - name: Generate metric SVGs
+        run: node scripts/generate-metrics.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_LOGIN: ${{ github.repository_owner }}
+          OUT_DIR: dist/metrics
+
+      - name: Push SVGs to the metrics branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: metrics
+          build_dir: dist/metrics
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
