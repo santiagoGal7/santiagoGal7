@@ -2,8 +2,9 @@
 // Los SVG se cargan dentro de <img> en GitHub: nada de JS ni fuentes externas.
 // Las animaciones usan CSS (@keyframes) y SMIL, que sí funcionan en ese contexto.
 //
-// Dirección "Plano": tinta sobre papel y un solo color de señal, como un juego de
-// planos técnicos. Cada asset se genera dos veces (tema oscuro y claro) y el README
+// Dirección "Plano": tinta sobre papel y un color de señal (naranja), como un juego de
+// planos técnicos. Azul, ocre y verde son lápices de corrección: solo en marcadores,
+// paquetes animados y resaltado de sintaxis, nunca en fondos ni bloques grandes. Cada asset se genera dos veces (tema oscuro y claro) y el README
 // elige con <picture>, así que el fondo es transparente y se integra con GitHub.
 
 export const THEMES = {
@@ -17,6 +18,8 @@ export const THEMES = {
     rule2: '#55503F',
     accent: '#F2762E',
     accentInk: '#1A0D04',
+    blue: '#7FA6D6',
+    ochre: '#D6A93F',
     ok: '#6CBF8E',
     err: '#E8664F',
   },
@@ -30,6 +33,8 @@ export const THEMES = {
     rule2: '#B9B1A0',
     accent: '#C2410C',
     accentInk: '#FFFFFF',
+    blue: '#2D5C99',
+    ochre: '#8F5F00',
     ok: '#1E7A4C',
     err: '#B42318',
   },

@@ -24,25 +24,25 @@
 
 <a name="sobre-mi"></a>
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/01-sobre-mi.svg" /><img src="./assets/light/headers/01-sobre-mi.svg" width="100%" alt="01 · Sobre mí" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/01-sobre-mi.svg" /><img src="./assets/light/headers/01-sobre-mi.svg" width="100%" alt="Sección 01: Sobre mí" /></picture>
 </p>
 
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/about.svg" /><img src="./assets/light/about.svg" width="100%" alt="Terminal que muestra Developer.cs: Santiago Gallo, backend developer en Colombia. Stack: .NET, C#, Python, PostgreSQL y n8n. Enfoque: APIs limpias, automatización y agentes de IA. Ahora: liderando el backend de Nodux. Al ejecutar dotnet run responde: ¡Hola! Gracias por pasar por mi perfil." /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/about.svg" /><img src="./assets/light/about.svg" width="100%" alt="Terminal que muestra Developer.cs: Santiago Gallo, backend developer en Colombia. Stack: .NET, C#, Python, PostgreSQL y n8n. Enfoque: APIs limpias, automatización y agentes de IA. Ahora: liderando el backend de Kodetto. Al ejecutar dotnet run responde: ¡Hola! Gracias por pasar por mi perfil." /></picture>
 </p>
 
 <a name="ahora"></a>
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/02-ahora.svg" /><img src="./assets/light/headers/02-ahora.svg" width="100%" alt="02 · Ahora mismo" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/02-ahora.svg" /><img src="./assets/light/headers/02-ahora.svg" width="100%" alt="Sección 02: Ahora mismo" /></picture>
 </p>
 
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/now.svg" /><img src="./assets/light/now.svg" width="100%" alt="Ahora mismo: lidero el backend de Nodux, trabajo en CampusRooms y experimento con automatización y agentes de IA en n8n." /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/now.svg" /><img src="./assets/light/now.svg" width="100%" alt="Ahora mismo: lidero el backend de Kodetto y experimento con automatización y agentes de IA en n8n." /></picture>
 </p>
 
 <a name="stack"></a>
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/03-stack.svg" /><img src="./assets/light/headers/03-stack.svg" width="100%" alt="03 · Stack" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/03-stack.svg" /><img src="./assets/light/headers/03-stack.svg" width="100%" alt="Sección 03: Stack" /></picture>
 </p>
 
 <p align="center">
@@ -51,7 +51,7 @@
 
 <a name="arquitectura"></a>
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/04-arquitectura.svg" /><img src="./assets/light/headers/04-arquitectura.svg" width="100%" alt="04 · Cómo construyo un backend" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/04-arquitectura.svg" /><img src="./assets/light/headers/04-arquitectura.svg" width="100%" alt="Sección 04: Cómo construyo un backend" /></picture>
 </p>
 
 <p align="center">
@@ -60,7 +60,7 @@
 
 <a name="proyectos"></a>
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/05-proyectos.svg" /><img src="./assets/light/headers/05-proyectos.svg" width="100%" alt="05 · Proyectos destacados" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/05-proyectos.svg" /><img src="./assets/light/headers/05-proyectos.svg" width="100%" alt="Sección 05: Proyectos destacados" /></picture>
 </p>
 
 <p align="center">
@@ -80,16 +80,16 @@
 
 <a name="trayectoria"></a>
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/06-trayectoria.svg" /><img src="./assets/light/headers/06-trayectoria.svg" width="100%" alt="06 · Trayectoria" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/06-trayectoria.svg" /><img src="./assets/light/headers/06-trayectoria.svg" width="100%" alt="Sección 06: Trayectoria" /></picture>
 </p>
 
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/timeline.svg" /><img src="./assets/light/timeline.svg" width="100%" alt="Trayectoria: mayo 2025 abro GitHub; julio 2025 Gestor de Contenido; septiembre 2025 LuxTime; octubre 2025 Hotel y Gestor de Compañías; enero 2026 AgendaBot; junio 2026 AutoTaller y evaluador de CV con IA; agosto 2026 HelpDesk; noviembre 2026 liderando el backend de Nodux y CampusRooms." /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/timeline.svg" /><img src="./assets/light/timeline.svg" width="100%" alt="Trayectoria: mayo 2025 abro GitHub; julio 2025 Gestor de Contenido; septiembre 2025 LuxTime; octubre 2025 Hotel y Gestor de Compañías; enero 2026 AgendaBot; junio 2026 AutoTaller y evaluador de CV con IA; agosto 2026 HelpDesk; noviembre 2026 liderando el backend de Kodetto." /></picture>
 </p>
 
 <a name="metricas"></a>
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/07-metricas.svg" /><img src="./assets/light/headers/07-metricas.svg" width="100%" alt="07 · Métricas en vivo" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/07-metricas.svg" /><img src="./assets/light/headers/07-metricas.svg" width="100%" alt="Sección 07: Métricas en vivo" /></picture>
 </p>
 
 <p align="center">
@@ -116,7 +116,7 @@
 
 <a name="contacto"></a>
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/08-contacto.svg" /><img src="./assets/light/headers/08-contacto.svg" width="100%" alt="08 · Contacto" /></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/dark/headers/08-contacto.svg" /><img src="./assets/light/headers/08-contacto.svg" width="100%" alt="Sección 08: Contacto" /></picture>
 </p>
 
 <p align="center">

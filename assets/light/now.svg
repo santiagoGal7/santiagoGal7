@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="236" viewBox="0 0 900 236" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="170" viewBox="0 0 900 170" role="img" aria-labelledby="t d">
   <title id="t">Ahora mismo</title>
-  <desc id="d">Nodux: Lidero el backend de un sistema de gestión con APIs en .NET y PostgreSQL. CampusRooms: Backend en .NET con Clean Architecture, asistente de IA en Python y frontend. Automatización: Flujos de automatización con n8n y prototipos de agentes de IA.</desc>
+  <desc id="d">Kodetto: Lidero el backend de un sistema de gestión con APIs en .NET y PostgreSQL. Automatización: Flujos de automatización con n8n y prototipos de agentes de IA.</desc>
   <style>
   text { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
   .mono { font-family: ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
@@ -31,26 +31,18 @@
   <path d="M0 37.5 H900" stroke="#DDD7CA"/>
   <g class="in" style="animation-delay:0.1s">
     <text x="0" y="66" font-size="13" font-weight="600" fill="#1E1C18">Liderando</text>
-    <text x="150" y="67" font-size="17" font-weight="600" letter-spacing="-0.2" fill="#1E1C18">Nodux</text>
+    <text x="150" y="67" font-size="17" font-weight="600" letter-spacing="-0.2" fill="#1E1C18">Kodetto</text>
     <text x="330" y="66" font-size="14" fill="#5F5A50" text-anchor="start">Lidero el backend de un sistema de gestión con APIs</text>
   <text x="330" y="86.3" font-size="14" fill="#5F5A50" text-anchor="start">en .NET y PostgreSQL.</text>
     <text x="722" y="66" font-size="13" fill="#5F5A50">.NET, PostgreSQL, APIs</text>
   </g>
   <path d="M0 103.5 H900" stroke="#DDD7CA"/>
   <g class="in" style="animation-delay:0.18s">
-    <text x="0" y="132" font-size="13" font-weight="400" fill="#5F5A50">En curso</text>
-    <text x="150" y="133" font-size="17" font-weight="600" letter-spacing="-0.2" fill="#1E1C18">CampusRooms</text>
-    <text x="330" y="132" font-size="14" fill="#5F5A50" text-anchor="start">Backend en .NET con Clean Architecture, asistente de</text>
-  <text x="330" y="152.3" font-size="14" fill="#5F5A50" text-anchor="start">IA en Python y frontend.</text>
-    <text x="722" y="132" font-size="13" fill="#5F5A50">Clean Arch, Python, IA</text>
+    <text x="0" y="132" font-size="13" font-weight="400" fill="#5F5A50">Experimentando</text>
+    <text x="150" y="133" font-size="17" font-weight="600" letter-spacing="-0.2" fill="#1E1C18">Automatización</text>
+    <text x="330" y="132" font-size="14" fill="#5F5A50" text-anchor="start">Flujos de automatización con n8n y prototipos de</text>
+  <text x="330" y="152.3" font-size="14" fill="#5F5A50" text-anchor="start">agentes de IA.</text>
+    <text x="722" y="132" font-size="13" fill="#5F5A50">n8n, Agentes, LLMs</text>
   </g>
-  <path d="M0 169.5 H900" stroke="#DDD7CA"/>
-  <g class="in" style="animation-delay:0.26s">
-    <text x="0" y="198" font-size="13" font-weight="400" fill="#5F5A50">Experimentando</text>
-    <text x="150" y="199" font-size="17" font-weight="600" letter-spacing="-0.2" fill="#1E1C18">Automatización</text>
-    <text x="330" y="198" font-size="14" fill="#5F5A50" text-anchor="start">Flujos de automatización con n8n y prototipos de</text>
-  <text x="330" y="218.3" font-size="14" fill="#5F5A50" text-anchor="start">agentes de IA.</text>
-    <text x="722" y="198" font-size="13" fill="#5F5A50">n8n, Agentes, LLMs</text>
-  </g>
-  <path d="M0 235.5 H900" stroke="#B9B1A0"/>
+  <path d="M0 169.5 H900" stroke="#B9B1A0"/>
 </svg>

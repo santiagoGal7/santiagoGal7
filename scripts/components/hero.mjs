@@ -43,7 +43,7 @@ export function hero() {
     size: 15,
     cycle: 20,
     phrases: [
-      { text: 'dotnet new webapi -n Nodux' },
+      { text: 'dotnet new webapi -n Kodetto' },
       { text: 'python agent.py --model gemini' },
       { text: 'n8n execute --workflow agenda-bot' },
       { text: 'git commit -m "ship it"' },

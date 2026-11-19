@@ -1,5 +1,6 @@
 // Arquitectura como plano: clientes, la API en cuatro capas y sus integraciones.
-// Conexiones ortogonales; una sola request (en acento) recorre la ruta hasta PostgreSQL.
+// Conexiones ortogonales; una request (en acento) recorre la ruta hasta PostgreSQL
+// y luego un evento (en azul) sigue el tramo asíncrono hasta el agente de IA.
 import { C, svg, esc, r2 } from '../lib/svg.mjs';
 
 export function architecture() {
@@ -100,13 +101,19 @@ export function architecture() {
   // Dentro de la caja de Infrastructure se oculta, así no tapa su texto.
   const route = `M186 ${cy[0]} H${busL} V${L(0)} H${lane} V${L(3)} H${busR} V${dbY} H${dbx - 6}`;
   const iy = ay + 48 + 3 * 56;
+  // Tras persistir, un evento (en azul) sale por el tramo asíncrono hacia el agente de IA.
+  const eventRoute = `M${infraR} ${n8nY} H${asyncX} V${aiY} H${right[0].x - 6}`;
   const packet = `
   <clipPath id="arch-clip"><path clip-rule="evenodd" d="M0 0 H${W} V${H} H0 Z M${lx} ${iy} H${infraR} V${iy + 46} H${lx} Z"/></clipPath>
   <g clip-path="url(#arch-clip)">
     <rect x="-3.5" y="-3.5" width="7" height="7" fill="${C.accent}">
       <animateMotion dur="4.4s" repeatCount="indefinite" path="${route}" keyPoints="0;1;1" keyTimes="0;0.82;1" calcMode="linear"/>
     </rect>
-  </g>`;
+  </g>
+  <rect x="-3.5" y="-3.5" width="7" height="7" fill="${C.blue}" opacity="0">
+    <animateMotion dur="4.4s" repeatCount="indefinite" path="${eventRoute}" keyPoints="0;0;1;1" keyTimes="0;0.83;0.97;1" calcMode="linear"/>
+    <animate attributeName="opacity" dur="4.4s" repeatCount="indefinite" values="0;1;0" keyTimes="0;0.83;0.985" calcMode="discrete"/>
+  </rect>`;
 
   // Encabezados de columna, sin reglas
   const heads = [
@@ -128,6 +135,8 @@ export function architecture() {
     <text x="130" y="391" font-size="11.5" fill="${C.muted}">asíncrono</text>
     <rect x="208" y="384" width="7" height="7" fill="${C.accent}"/>
     <text x="223" y="391" font-size="11.5" fill="${C.muted}">request</text>
+    <rect x="290" y="384" width="7" height="7" fill="${C.blue}"/>
+    <text x="305" y="391" font-size="11.5" fill="${C.muted}">evento</text>
   </g>
   `;
 

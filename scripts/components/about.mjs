@@ -2,11 +2,11 @@
 // Todo en bucle con SMIL discreto para que parezca una terminal real.
 import { C, svg, esc, r2, MONO_RATIO, BLINK_CSS } from '../lib/svg.mjs';
 
-// Dos tonos: tinta para nombres y valores, apagado para palabras clave y puntuación.
+// Tinta para nombres y valores, azul para palabras clave, apagado para puntuación.
 // El acento queda solo para el prompt y el cursor. Se rellena al renderizar.
 const K = {};
 const setTones = () =>
-  Object.assign(K, { kw: C.muted, type: C.ink, prop: C.ink, str: C.ink, p: C.muted, bool: C.ink, ok: C.ok, dim: C.muted, text: C.ink });
+  Object.assign(K, { kw: C.blue, type: C.ink, prop: C.ink, str: C.ink, p: C.muted, bool: C.ink, ok: C.ok, dim: C.muted, text: C.ink });
 
 // Cada línea: lista de [texto, color]. Los espacios se respetan por columnas.
 const prop = (type, name, value, valueColor = K.str) => [
@@ -36,7 +36,7 @@ const buildCode = () => [
   prop('string', 'Location', ['"Colombia"']),
   prop('string[]', 'Stack', list(['.NET', 'Python', 'JavaScript'])),
   prop('string[]', 'Focus', list(['APIs REST', 'Clean Architecture', 'Agentes de IA'])),
-  prop('string', 'Now', ['"Liderando el backend de Nodux"']),
+  prop('string', 'Now', ['"Liderando el backend de Kodetto"']),
   [['}', K.p]],
 ];
 
@@ -143,7 +143,7 @@ export function about() {
     w: W,
     h: H,
     title: 'Sobre mí: terminal con un record de C#',
-    desc: 'Santiago Gallo, Backend Developer en Colombia. Stack: .NET, Python y JavaScript. Enfoque: APIs REST, Clean Architecture y agentes de IA. Ahora lidera el backend de Nodux.',
+    desc: 'Santiago Gallo, Backend Developer en Colombia. Stack: .NET, Python y JavaScript. Enfoque: APIs REST, Clean Architecture y agentes de IA. Ahora lidera el backend de Kodetto.',
     defs,
     css,
     body: chrome + body,

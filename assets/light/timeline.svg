@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="186" viewBox="0 0 900 186" role="img" aria-labelledby="t d">
   <title id="t">Trayectoria</title>
-  <desc id="d">2025-05: Hola, GitHub (Abro mi cuenta). 2025-07: Gestor de Contenido (Python en consola). 2025-09: LuxTime (Tienda de relojes). 2025-10: Hotel y Compañías (JS y Web Components). 2026-01: AgendaBot (n8n y Telegram). 2026-06: AutoTaller y CV IA (.NET 10 y Gemini). 2026-08: HelpDesk (Clean Architecture). 2026-11: Nodux y CampusRooms (Liderando backend)</desc>
+  <desc id="d">2025-05: Hola, GitHub (Abro mi cuenta). 2025-07: Gestor de Contenido (Python en consola). 2025-09: LuxTime (Tienda de relojes). 2025-10: Hotel y Compañías (JS y Web Components). 2026-01: AgendaBot (n8n y Telegram). 2026-06: AutoTaller y CV IA (.NET 10 y Gemini). 2026-08: HelpDesk (Clean Architecture). 2026-11: Kodetto (Liderando backend)</desc>
   <style>
   text { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
   .mono { font-family: ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
@@ -80,8 +80,8 @@
     <text x="773" y="40" font-size="11" class="mono" fill="#C2410C">2026-11</text>
     <rect x="772" y="52" width="8" height="8" fill="#C2410C"/>
     <path d="M776.5 63 V69" stroke="#B9B1A0"/>
-    <text x="773" y="84" font-size="13.5" font-weight="600" fill="#1E1C18">Nodux y</text><text x="773" y="101" font-size="13.5" font-weight="600" fill="#1E1C18">CampusRooms</text>
-    <text x="773" y="122" font-size="12" fill="#5F5A50">Liderando backend</text>
+    <text x="773" y="84" font-size="13.5" font-weight="600" fill="#1E1C18">Kodetto</text>
+    <text x="773" y="105" font-size="12" fill="#5F5A50">Liderando backend</text>
   </g>
   
   <path d="M6.5 168 V176 M775.5 168 V176" stroke="#B9B1A0"/>

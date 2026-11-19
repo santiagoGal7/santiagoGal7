@@ -62,16 +62,10 @@ export const elements = [
 
 export const now = [
   {
-    title: 'Nodux',
+    title: 'Kodetto',
     status: 'LIDERANDO',
     text: 'Lidero el backend de un sistema de gestión con APIs en .NET y PostgreSQL.',
     tags: ['.NET', 'PostgreSQL', 'APIs'],
-  },
-  {
-    title: 'CampusRooms',
-    status: 'EN CURSO',
-    text: 'Backend en .NET con Clean Architecture, asistente de IA en Python y frontend.',
-    tags: ['Clean Arch', 'Python', 'IA'],
   },
   {
     title: 'Automatización',
@@ -143,7 +137,7 @@ export const timeline = [
   { date: '2026-01', title: 'AgendaBot', sub: 'n8n y Telegram' },
   { date: '2026-06', title: 'AutoTaller y CV IA', sub: '.NET 10 y Gemini' },
   { date: '2026-08', title: 'HelpDesk', sub: 'Clean Architecture' },
-  { date: '2026-11', title: 'Nodux y CampusRooms', sub: 'Liderando backend', now: true },
+  { date: '2026-11', title: 'Kodetto', sub: 'Liderando backend', now: true },
 ];
 
 export const sections = [
