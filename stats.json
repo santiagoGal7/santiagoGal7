@@ -1,0 +1,59 @@
+{
+  "updated": "2026-11-27T15:28:38.602Z",
+  "total": 145,
+  "commits": 134,
+  "prs": 4,
+  "repos": 11,
+  "stars": 0,
+  "activeDays": 41,
+  "current": 0,
+  "longest": 5,
+  "followers": 4,
+  "weekday": [
+    6,
+    10,
+    70,
+    16,
+    19,
+    24,
+    0
+  ],
+  "languages": [
+    {
+      "name": "C#",
+      "size": 1456459,
+      "repos": 2,
+      "color": "#7355dd"
+    },
+    {
+      "name": "TypeScript",
+      "size": 367136,
+      "repos": 2,
+      "color": "#3178c6"
+    },
+    {
+      "name": "JavaScript",
+      "size": 253197,
+      "repos": 6,
+      "color": "#f1e05a"
+    },
+    {
+      "name": "Python",
+      "size": 40806,
+      "repos": 2,
+      "color": "#3572A5"
+    },
+    {
+      "name": "CSS",
+      "size": 26657,
+      "repos": 5,
+      "color": "#663399"
+    },
+    {
+      "name": "HTML",
+      "size": 2809,
+      "repos": 4,
+      "color": "#e34c26"
+    }
+  ]
+}

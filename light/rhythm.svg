@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="446" height="290" viewBox="0 0 446 290" role="img" aria-labelledby="t d">
+  <title id="t">Ritmo semanal de contribuciones</title>
+  <desc id="d">lunes: 10, martes: 70, miércoles: 16, jueves: 19, viernes: 24, sábado: 0, domingo: 6. Día más activo: martes.</desc>
+  <style>
+  text { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; }
+  .mono { font-family: ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+  .draw { stroke-dasharray: 1; animation: draw 1.1s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes draw { from { stroke-dashoffset: 1; } }
+  .in { animation: in .7s cubic-bezier(.16,1,.3,1) backwards; }
+  @keyframes in { from { opacity: 0; transform: translateY(6px); } }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; }
+  }
+
+    .bar { animation: bar .7s cubic-bezier(.16,1,.3,1) backwards; transform-box: fill-box; transform-origin: center bottom; }
+    @keyframes bar { from { transform: scaleY(0); } }
+  </style>
+  <defs>
+  <pattern id="p-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V6" stroke="#B9B1A0" stroke-width="1"/>
+  </pattern>
+  <pattern id="p-hatch-a" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <path d="M0 0 V5" stroke="#C2410C" stroke-width="1.2"/>
+  </pattern>
+  <pattern id="p-grid" width="12" height="12" patternUnits="userSpaceOnUse">
+    <path d="M12 0 H0 V12" fill="none" stroke="#DDD7CA" stroke-width="0.6"/>
+  </pattern>
+</defs>
+<g transform="translate(6 0)">
+  
+  <text x="0" y="20" font-size="12.5" fill="#5F5A50">Ritmo semanal</text>
+  <text x="440" y="20" text-anchor="end" font-size="12" fill="#5F5A50">contribuciones por día, 12 meses</text>
+  <path d="M0 30.5 H440" stroke="#DDD7CA"/>
+  <rect x="14.93" y="201.36" width="33" height="20.64" fill="url(#p-hatch)" stroke="#5F5A50" class="bar" style="animation-delay:0.1s"/>
+  <text x="31.43" y="192.86" text-anchor="middle" font-size="11" class="mono in" fill="#5F5A50" style="animation-delay:0.4s">10</text>
+  <text x="31.43" y="242" text-anchor="middle" font-size="11.5" fill="#5F5A50">Lun</text><rect x="77.29" y="74" width="34" height="148" fill="url(#p-hatch-a)" stroke="#C2410C" class="bar" style="animation-delay:0.14s"/>
+  <text x="94.29" y="66" text-anchor="middle" font-size="11" class="mono in" fill="#1E1C18" font-weight="600" style="animation-delay:0.44s">70</text>
+  <text x="94.29" y="242" text-anchor="middle" font-size="11.5" fill="#1E1C18" font-weight="600">Mar</text><rect x="140.64" y="188.67" width="33" height="33.33" fill="url(#p-hatch)" stroke="#5F5A50" class="bar" style="animation-delay:0.18s"/>
+  <text x="157.14" y="180.17" text-anchor="middle" font-size="11" class="mono in" fill="#5F5A50" style="animation-delay:0.48s">16</text>
+  <text x="157.14" y="242" text-anchor="middle" font-size="11.5" fill="#5F5A50">Mié</text><rect x="203.5" y="182.33" width="33" height="39.67" fill="url(#p-hatch)" stroke="#5F5A50" class="bar" style="animation-delay:0.22s"/>
+  <text x="220" y="173.83" text-anchor="middle" font-size="11" class="mono in" fill="#5F5A50" style="animation-delay:0.52s">19</text>
+  <text x="220" y="242" text-anchor="middle" font-size="11.5" fill="#5F5A50">Jue</text><rect x="266.36" y="171.76" width="33" height="50.24" fill="url(#p-hatch)" stroke="#5F5A50" class="bar" style="animation-delay:0.26s"/>
+  <text x="282.86" y="163.26" text-anchor="middle" font-size="11" class="mono in" fill="#5F5A50" style="animation-delay:0.56s">24</text>
+  <text x="282.86" y="242" text-anchor="middle" font-size="11.5" fill="#5F5A50">Vie</text>
+  <text x="345.71" y="214" text-anchor="middle" font-size="11" class="mono in" fill="#5F5A50" style="animation-delay:0.6s">0</text>
+  <text x="345.71" y="242" text-anchor="middle" font-size="11.5" fill="#5F5A50">Sáb</text><rect x="392.07" y="209.81" width="33" height="12.19" fill="url(#p-hatch)" stroke="#5F5A50" class="bar" style="animation-delay:0.34s"/>
+  <text x="408.57" y="201.31" text-anchor="middle" font-size="11" class="mono in" fill="#5F5A50" style="animation-delay:0.64s">6</text>
+  <text x="408.57" y="242" text-anchor="middle" font-size="11.5" fill="#5F5A50">Dom</text>
+  <path d="M0 222.5 H440" stroke="#1E1C18"/>
+  <path d="M0 258.5 H440" stroke="#DDD7CA"/>
+  <text x="0" y="282" font-size="12" fill="#5F5A50">Día más activo: <tspan fill="#1E1C18" font-weight="600">martes</tspan></text>
+  <text x="440" y="282" text-anchor="end" font-size="12" fill="#5F5A50">3,5 contribuciones por día activo</text>
+  </g>
+</svg>
